@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About | Verso Alto</title>
+
+    <style>
+
+        /* =========================
+           GENERAL
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #18352b;
+            background: #f7f5ef;
+            line-height: 1.6;
+        }
+
+        .section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 80px 25px;
+        }
+
+        .section-label {
+            font-size: 0.85rem;
+            letter-spacing: 3px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            background: white;
+            border-bottom: 1px solid #e4e1d8;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 15px 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo img {
+            width: 155px;
+            display: block;
+        }
+
+        nav {
+            display: flex;
+            gap: 28px;
+        }
+
+        nav a {
+            color: #18352b;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            color: #657b62;
+        }
+
+
+        /* =========================
+           ABOUT HERO
+        ========================= */
+
+        .about-hero {
+            background: #18352b;
+            color: white;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 25px;
+        }
+
+        .about-hero-content {
+            max-width: 850px;
+        }
+
+        .about-hero .section-label {
+            color: #d9dfd7;
+        }
+
+        .about-hero h1 {
+            font-size: 4.5rem;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+
+        .about-hero p:not(.section-label) {
+            max-width: 650px;
+            margin: auto;
+            font-size: 1.25rem;
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+
+
+        /* =========================
+           THE STORY
+        ========================= */
+
+        .story-section {
+            background: #f7f5ef;
+        }
+
+        .story-layout {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .story-heading {
+            position: sticky;
+            top: 40px;
+        }
+
+        .story-heading h2 {
+            font-size: 3rem;
+            line-height: 1.2;
+        }
+
+        .story-text {
+            color: #5e675f;
+            font-size: 1.08rem;
+            line-height: 1.9;
+        }
+
+        .story-text p + p {
+            margin-top: 25px;
+        }
+
+        .story-quote {
+            margin-top: 45px;
+            padding: 30px;
+            border-left: 4px solid #657b62;
+            background: #e9e7de;
+            color: #18352b;
+            font-size: 1.35rem;
+            line-height: 1.6;
+            font-weight: 600;
+        }
+
+
+        /* =========================
+           MISSION
+        ========================= */
+
+        .mission-section {
+            background: white;
+        }
+
+        .mission-content {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .mission-content h2 {
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 25px;
+        }
+
+        .mission-content > p:not(.section-label) {
+            color: #5e675f;
+            font-size: 1.1rem;
+            line-height: 1.9;
+        }
+
+
+        /* =========================
+           WHAT VERSO ALTO IS ABOUT
+        ========================= */
+
+        .values-section {
+            background: #e9e7de;
+        }
+
+        .values-heading {
+            max-width: 700px;
+            margin-bottom: 45px;
+        }
+
+        .values-heading h2 {
+            font-size: 2.8rem;
+            line-height: 1.2;
+        }
+
+        .values-list {
+            border-top: 1px solid #d3d0c7;
+        }
+
+        .value-row {
+            display: grid;
+            grid-template-columns: 80px 260px 1fr;
+            gap: 30px;
+            align-items: center;
+            padding: 30px 0;
+            border-bottom: 1px solid #d3d0c7;
+        }
+
+        .value-number {
+            font-size: 0.9rem;
+            color: #657b62;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .value-row h3 {
+            font-size: 1.35rem;
+        }
+
+        .value-row p {
+            color: #5e675f;
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           FAITH + ADVENTURE
+        ========================= */
+
+        .faith-section {
+            background: white;
+        }
+
+        .faith-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .faith-text h2 {
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 25px;
+        }
+
+        .faith-text p:not(.section-label) {
+            color: #5e675f;
+            font-size: 1.05rem;
+            line-height: 1.9;
+        }
+
+        .faith-box {
+            background: #18352b;
+            color: white;
+            padding: 50px 40px;
+            text-align: center;
+            border-radius: 6px;
+        }
+
+        .faith-box .section-label {
+            color: #d9dfd7;
+        }
+
+        .faith-box h3 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+
+        .faith-box p {
+            opacity: 0.85;
+            line-height: 1.8;
+        }
+
+
+        /* =========================
+           CLOSING
+        ========================= */
+
+        .about-closing {
+            min-height: 450px;
+            background: #18352b;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 25px;
+        }
+
+        .about-closing-content {
+            max-width: 800px;
+        }
+
+        .about-closing .section-label {
+            color: #d9dfd7;
+        }
+
+        .about-closing h2 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin: 15px 0 20px;
+        }
+
+        .about-closing p:last-child {
+            opacity: 0.8;
+            font-size: 1.1rem;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #18352b;
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        footer img {
+            width: 130px;
+            filter: brightness(0) invert(1);
+            margin-bottom: 10px;
+        }
+
+        footer p {
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .about-hero {
+                min-height: 450px;
+            }
+
+            .about-hero h1 {
+                font-size: 3rem;
+            }
+
+            .story-layout {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .story-heading {
+                position: static;
+            }
+
+            .story-heading h2 {
+                font-size: 2.4rem;
+            }
+
+            .mission-content h2 {
+                font-size: 2.4rem;
+            }
+
+            .values-heading h2 {
+                font-size: 2.4rem;
+            }
+
+            .value-row {
+                grid-template-columns: 1fr;
+                gap: 10px;
+                padding: 25px 0;
+            }
+
+            .faith-layout {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .faith-text h2 {
+                font-size: 2.4rem;
+            }
+
+            .about-closing h2 {
+                font-size: 2.5rem;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+    <!-- =========================
+         HEADER
+    ========================= -->
+
+    <header>
+
+        <div class="nav-container">
+
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Verso Alto">
+            </a>
+
+            <nav>
+
+                <a href="index.html">Home</a>
+
+                <a href="hiking.html">Hiking</a>
+
+                <a href="travel.html">Travel</a>
+
+                <a href="gear.html">Gear</a>
+
+                <a href="about.html">About</a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section class="about-hero">
+
+        <div class="about-hero-content">
+
+            <p class="section-label">THE STORY BEHIND VERSO ALTO</p>
+
+            <h1>About</h1>
+
+            <p>
+                A place for the mountains, the journey,
+                and the things that make life worth going higher for.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         THE STORY
+    ========================= -->
+
+    <section class="story-section">
+
+        <div class="section">
+
+            <div class="story-layout">
+
+                <div class="story-heading">
+
+                    <p class="section-label">OUR STORY</p>
+
+                    <h2>It Started With Going Outside.</h2>
+
+                </div>
+
+                <div class="story-text">
+
+                    <p>
+                        Verso Alto was created around a simple idea:
+                        there is something different about stepping
+                        outside, walking a trail, and seeing what is
+                        beyond the next ridge.
+                    </p>
+
+                    <p>
+                        Hiking and traveling have a way of slowing
+                        everything down. They create space to think,
+                        experience something new, and appreciate the
+                        world around us.
+                    </p>
+
+                    <p>
+                        Verso Alto brings those experiences together
+                        through hiking, travel, gear, and the stories
+                        that come from getting out and exploring.
+                    </p>
+
+                    <div class="story-quote">
+                        "Verso l'Alto" means "toward the heights."
+                        It is a reminder to keep moving upward,
+                        both on the trail and in life.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         MISSION
+    ========================= -->
+
+    <section class="mission-section">
+
+        <div class="section">
+
+            <div class="mission-content">
+
+                <p class="section-label">THE MISSION</p>
+
+                <h2>Go Outside. Go Further. Live With Purpose.</h2>
+
+                <p>
+                    Verso Alto is about encouraging people to explore
+                    more, spend time outside, and find experiences that
+                    are meaningful beyond simply checking a destination
+                    off a list.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         VALUES
+    ========================= -->
+
+    <section class="values-section">
+
+        <div class="section">
+
+            <div class="values-heading">
+
+                <p class="section-label">WHAT WE BELIEVE</p>
+
+                <h2>The Things That Shape Verso Alto</h2>
+
+            </div>
+
+            <div class="values-list">
+
+                <div class="value-row">
+
+                    <span class="value-number">01</span>
+
+                    <h3>Adventure</h3>
+
+                    <p>
+                        Keep exploring. Take the trail, drive the
+                        unfamiliar road, and stay open to what is ahead.
+                    </p>
+
+                </div>
+
+                <div class="value-row">
+
+                    <span class="value-number">02</span>
+
+                    <h3>Brotherhood</h3>
+
+                    <p>
+                        The best adventures are often shared.
+                        Build friendships, encourage one another,
+                        and bring people along.
+                    </p>
+
+                </div>
+
+                <div class="value-row">
+
+                    <span class="value-number">03</span>
+
+                    <h3>Purpose</h3>
+
+                    <p>
+                        Adventure is more meaningful when it points
+                        toward something greater than ourselves.
+                    </p>
+
+                </div>
+
+                <div class="value-row">
+
+                    <span class="value-number">04</span>
+
+                    <h3>Wonder</h3>
+
+                    <p>
+                        Pay attention to the views, the quiet moments,
+                        and the places that remind us how much there is
+                        to discover.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FAITH + ADVENTURE
+    ========================= -->
+
+    <section class="faith-section">
+
+        <div class="section">
+
+            <div class="faith-layout">
+
+                <div class="faith-text">
+
+                    <p class="section-label">FAITH + ADVENTURE</p>
+
+                    <h2>The Journey Is Bigger Than the Destination.</h2>
+
+                    <p>
+                        For Verso Alto, adventure is not only about
+                        reaching the summit. It is also about the people
+                        beside us, the lessons along the way, and the
+                        opportunity to recognize something greater in
+                        the world around us.
+                    </p>
+
+                </div>
+
+                <div class="faith-box">
+
+                    <p class="section-label">VERSO L'ALTO</p>
+
+                    <h3>Toward the Heights.</h3>
+
+                    <p>
+                        Keep climbing. Keep seeking.
+                        Keep becoming the person you are called to be.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CLOSING
+    ========================= -->
+
+    <section class="about-closing">
+
+        <div class="about-closing-content">
+
+            <p class="section-label">VERSO ALTO</p>
+
+            <h2>There Is Always Somewhere Higher To Go.</h2>
+
+            <p>
+                Find the trail. Take the journey. Keep moving upward.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <img src="images/logo.png" alt="Verso Alto">
+
+        <p>
+            © 2026 Verso Alto. All rights reserved.
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
