@@ -224,6 +224,73 @@ color: white;
             font-size: 0.9rem;
             font-weight: bold;
         }
+        /* FEATURED TRAIL */
+
+.featured-trail {
+    background: white;
+    padding: 80px 25px;
+}
+
+.featured-content {
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+
+    align-items: center;
+}
+
+.featured-image img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 6px;
+    display: block;
+}
+
+.featured-text {
+    padding: 20px;
+}
+
+.featured-text h2 {
+    font-size: 2.6rem;
+    margin-bottom: 18px;
+}
+
+.featured-text > p:not(.section-label) {
+    color: #5e675f;
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.featured-details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+
+    margin-top: 30px;
+}
+
+.featured-details div {
+    background: #f7f5ef;
+    padding: 18px 12px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.featured-details strong {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 4px;
+}
+
+.featured-details span {
+    display: block;
+    color: #657b62;
+    font-size: 0.8rem;
+}
 /* PLAN YOUR HIKE */
 
 .plan-hike {
@@ -326,7 +393,17 @@ color: white;
             .trail-grid {
                 grid-template-columns: 1fr;
             }
+.featured-content {
+    grid-template-columns: 1fr;
+}
 
+.featured-image img {
+    height: 300px;
+}
+
+.featured-details {
+    grid-template-columns: 1fr;
+}
         }
 
     </style>
@@ -531,7 +608,55 @@ color: white;
     </div>
 
 </section>
+<!-- FEATURED TRAIL -->
 
+<section class="featured-trail">
+
+    <div class="featured-content">
+
+        <div class="featured-image">
+            <img
+                src="images/smokies-overlook.jpg"
+                alt="Mountain overlook in the Great Smoky Mountains"
+            >
+        </div>
+
+        <div class="featured-text">
+
+            <p class="section-label">FEATURED TRAIL</p>
+
+            <h2>Mount Le Conte</h2>
+
+            <p>
+                One of the most memorable hikes in the Great Smoky Mountains,
+                Mount Le Conte combines a challenging climb with incredible
+                mountain scenery along the way.
+            </p>
+
+            <div class="featured-details">
+
+                <div>
+                    <strong>10+ Miles</strong>
+                    <span>Round Trip</span>
+                </div>
+
+                <div>
+                    <strong>Strenuous</strong>
+                    <span>Difficulty</span>
+                </div>
+
+                <div>
+                    <strong>6,593 ft</strong>
+                    <span>Elevation</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 <!-- PLAN YOUR HIKE -->
 
 <section class="plan-hike">
