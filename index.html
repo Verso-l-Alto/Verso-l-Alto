@@ -365,6 +365,43 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             opacity: 0.8;
         }
 
+        .instagram-link {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin: 5px 0 12px;
+
+    color: #e1306c;
+
+    text-decoration: none;
+
+    transition: 0.2s;
+}
+
+.instagram-icon {
+    width: 28px;
+    height: 28px;
+
+    fill: none;
+
+    stroke: currentColor;
+
+    stroke-width: 2;
+}
+
+.instagram-dot {
+    fill: currentColor;
+
+    stroke: none;
+}
+
+.instagram-link:hover {
+    color: #ff5a8a;
+
+    transform: translateY(-2px);
+}
 
         /* MOBILE */
 
@@ -673,8 +710,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- FOOTER -->
 
-<!-- FOOTER -->
-
 <footer>
 
     <img
@@ -682,15 +717,42 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         alt="Verso Alto"
     >
 
-    <p>
-        <a
-            href="https://www.instagram.com/official_versoalto/"
-            target="_blank"
-            rel="noopener noreferrer"
+    <a
+        href="https://www.instagram.com/official_versoalto/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Follow Verso Alto on Instagram"
+        class="instagram-link"
+    >
+        <svg
+            class="instagram-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
         >
-            Instagram · @official_versoalto
-        </a>
-    </p>
+            <rect
+                x="3"
+                y="3"
+                width="18"
+                height="18"
+                rx="5"
+                ry="5"
+            ></rect>
+
+            <circle
+                cx="12"
+                cy="12"
+                r="4"
+            ></circle>
+
+            <circle
+                cx="17.5"
+                cy="6.5"
+                r="1"
+                class="instagram-dot"
+            ></circle>
+        </svg>
+    </a>
 
     <p>
         © 2026 Verso Alto.
@@ -698,7 +760,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </p>
 
 </footer>
-
 
 </body>
 
