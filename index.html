@@ -352,11 +352,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
 
         footer img {
-            width: 130px;
+            
+    width: 130px;
 
-            filter: brightness(0) invert(1);
+    filter: brightness(0) invert(1);
 
-            margin-bottom: 10px;
+    display: block;
+
+    margin: 0 auto 10px;
         }
 
         footer p {
@@ -366,12 +369,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
 
         .instagram-link {
-    display: inline-flex;
+    display: flex;
 
     align-items: center;
     justify-content: center;
 
-    margin: 5px 0 12px;
+    width: fit-content;
+
+    margin: 5px auto 12px;
 
     color: #e1306c;
 
@@ -379,7 +384,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     transition: 0.2s;
 }
-
+        
 .instagram-icon {
     width: 28px;
     height: 28px;
