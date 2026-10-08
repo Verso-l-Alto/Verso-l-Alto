@@ -1,771 +1,1957 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-P5FS5928');</script>
-<!-- End Google Tag Manager -->
-    
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Verso Alto | Hiking, Travel & Outdoor Adventure</title>
-
-    <meta name="description"
-        content="Verso Alto explores hiking, mountain destinations, outdoor adventure, travel, and gear for people who want to explore further and go higher.">
-
-    <style>
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            color: #18352b;
-            background: #f7f5ef;
-            line-height: 1.6;
-        }
-
-        /* NAVIGATION */
-
-        header {
-            background: #ffffff;
-            border-bottom: 1px solid #e4e1d8;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: auto;
-            padding: 15px 25px;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        .logo img {
-            width: 155px;
-            height: auto;
-            display: block;
-        }
+  <title>Verso Alto | Find Your Next Adventure</title>
 
-        nav {
-            display: flex;
-            gap: 28px;
-        }
+  <meta
+    name="description"
+    content="Verso Alto helps you discover trails, mountains, destinations, and unforgettable outdoor adventures."
+  >
 
-        nav a {
-            text-decoration: none;
-            color: #18352b;
-            font-weight: 600;
-            font-size: 0.95rem;
-        }
+  <meta
+    name="keywords"
+    content="hiking, hiking trails, mountains, outdoor adventures, travel, hiking destinations, Verso Alto"
+  >
 
-        nav a:hover {
-            color: #657b62;
-        }
+  <meta name="author" content="Verso Alto">
 
+  <meta property="og:title" content="Verso Alto | Find Your Next Adventure">
+  <meta
+    property="og:description"
+    content="Discover trails, mountains, destinations, and adventures worth taking."
+  >
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://verso-alto.com/">
 
-        /* HERO */
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        .hero {
-            min-height: 650px;
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
 
-            background:
-                linear-gradient(
-                    rgba(15, 35, 28, 0.35),
-                    rgba(15, 35, 28, 0.55)
-                ),
-                url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1800&q=85");
+  <style>
 
-            background-size: cover;
-            background-position: center;
+    /* =========================
+       VARIABLES
+    ========================= */
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+    :root {
+      --forest: #18352b;
+      --forest-light: #2d5142;
+      --sage: #657b62;
 
-            text-align: center;
-            color: white;
-        }
+      --cream: #f7f5ef;
+      --cream-dark: #ebe7dc;
 
-        .hero-content {
-            max-width: 800px;
-            padding: 40px 25px;
-        }
+      --white: #ffffff;
+      --black: #111714;
 
-        .hero h1 {
-            font-size: 4.5rem;
-            letter-spacing: 4px;
-            margin-bottom: 15px;
-        }
+      --muted: #66706a;
 
-        .hero p {
-            font-size: 1.3rem;
-            max-width: 650px;
-            margin: auto;
-            margin-bottom: 30px;
-        }
+      --max-width: 1200px;
 
-        .button {
-            display: inline-block;
+      --shadow: 0 18px 50px rgba(17, 23, 20, 0.10);
+    }
 
-            background: white;
-            color: #18352b;
 
-            padding: 13px 28px;
+    /* =========================
+       RESET
+    ========================= */
 
-            border-radius: 3px;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-            text-decoration: none;
-            font-weight: bold;
+    html {
+      scroll-behavior: smooth;
+    }
 
-            transition: 0.2s;
-        }
+    body {
+      font-family: "DM Sans", sans-serif;
+      background: var(--cream);
+      color: var(--black);
+      line-height: 1.6;
+    }
 
-        .button:hover {
-            background: #e9e6dc;
-            transform: translateY(-2px);
-        }
+    img {
+      display: block;
+      width: 100%;
+    }
 
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-        /* PHOTO CREDIT */
+    button {
+      font-family: inherit;
+    }
 
-        .photo-credit {
-            position: absolute;
 
-            bottom: 10px;
-            right: 15px;
+    /* =========================
+       GENERAL
+    ========================= */
 
-            font-size: 0.7rem;
+    .container {
+      width: min(92%, var(--max-width));
+      margin: 0 auto;
+    }
 
-            color: rgba(255, 255, 255, 0.8);
-        }
+    .section {
+      padding: 100px 0;
+    }
 
-        .photo-credit a {
-            color: white;
-        }
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 16px;
 
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
 
-        /* SECTIONS */
+      color: var(--sage);
+    }
 
-        .section {
-            max-width: 1150px;
-            margin: auto;
+    .section-title {
+      max-width: 720px;
 
-            padding: 80px 25px;
-        }
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2.3rem, 5vw, 4.2rem);
+      line-height: 1.05;
 
-        .section h2 {
-            text-align: center;
+      color: var(--forest);
+    }
 
-            font-size: 2.3rem;
+    .section-intro {
+      max-width: 650px;
+      margin-top: 20px;
 
-            margin-bottom: 15px;
-        }
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
 
-        .intro {
-            text-align: center;
 
-            max-width: 700px;
+    /* =========================
+       NAVIGATION
+    ========================= */
 
-            margin: 0 auto 50px;
+    .navbar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 20;
 
-            color: #5c665f;
-        }
+      width: 100%;
 
+      padding: 22px 0;
+    }
 
-        /* CARDS */
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-        .cards {
-            display: grid;
+    .logo {
+      display: inline-flex;
+      align-items: center;
 
-            grid-template-columns:
-                repeat(3, 1fr);
+      padding: 8px 12px;
 
-            gap: 25px;
-        }
+      background: rgba(247, 245, 239, 0.96);
+      border-radius: 10px;
 
-        .card {
-            background: white;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
 
-            padding: 35px 30px;
+      transition: transform 0.25s ease;
+    }
 
-            border: 1px solid #e5e2da;
+    .logo:hover {
+      transform: translateY(-2px);
+    }
 
-            border-radius: 5px;
+    .logo img {
+      width: 145px;
+      height: auto;
+    }
 
-            transition: 0.2s;
-        }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
 
-        .card:hover {
-            transform: translateY(-5px);
+      color: var(--white);
+    }
 
-            box-shadow:
-                0 10px 25px rgba(0, 0, 0, 0.08);
-        }
+    .nav-links a {
+      position: relative;
 
-        .card h3 {
-            font-size: 1.4rem;
+      font-size: 0.92rem;
+      font-weight: 600;
 
-            margin-bottom: 12px;
-        }
+      transition: opacity 0.25s ease;
+    }
 
-        .card p {
-            color: #606860;
+    .nav-links a:hover {
+      opacity: 0.72;
+    }
 
-            margin-bottom: 20px;
-        }
+    .nav-links a::after {
+      content: "";
 
-        .card a {
-            color: #18352b;
+      position: absolute;
+      left: 0;
+      bottom: -7px;
 
-            font-weight: bold;
+      width: 0;
+      height: 2px;
 
-            text-decoration: none;
-        }
+      background: var(--white);
 
-        .card a:hover {
-            text-decoration: underline;
-        }
+      transition: width 0.25s ease;
+    }
 
+    .nav-links a:hover::after {
+      width: 100%;
+    }
 
-        /* BRAND SECTION */
 
-        .about {
-            background: #e9e7de;
+    /* =========================
+       HERO
+    ========================= */
 
-            max-width: none;
+    .hero {
+      position: relative;
 
-            text-align: center;
-        }
+      min-height: 92vh;
 
-        .about-content {
-            max-width: 750px;
+      display: flex;
+      align-items: center;
 
-            margin: auto;
-        }
+      overflow: hidden;
 
-        .about h2 {
-            margin-bottom: 20px;
-        }
+      color: var(--white);
+    }
 
-        .about p {
-            color: #4f5952;
+    .hero-background {
+      position: absolute;
+      inset: 0;
 
-            font-size: 1.05rem;
-        }
+      background-image:
+        linear-gradient(
+          90deg,
+          rgba(8, 24, 18, 0.78) 0%,
+          rgba(8, 24, 18, 0.46) 45%,
+          rgba(8, 24, 18, 0.18) 100%
+        ),
+        url("images/smokies-overlook.jpg");
 
+      background-size: cover;
+      background-position: center;
+    }
 
-        /* DESTINATIONS */
+    .hero-content {
+      position: relative;
+      z-index: 2;
 
-        .destinations {
-            background: #ffffff;
-        }
+      max-width: 760px;
 
-        .destination-grid {
-            max-width: 1150px;
+      padding-top: 80px;
+    }
 
-            margin: auto;
+    .hero-eyebrow {
+      margin-bottom: 18px;
 
-            display: grid;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
 
-            grid-template-columns:
-                repeat(3, 1fr);
+      color: rgba(255, 255, 255, 0.82);
+    }
 
-            gap: 25px;
-        }
+    .hero h1 {
+      font-family: "Playfair Display", serif;
 
-        .destination {
-            min-height: 250px;
+      font-size: clamp(3.4rem, 8vw, 7rem);
+      line-height: 0.96;
 
-            padding: 30px;
+      letter-spacing: -0.04em;
+    }
 
-            display: flex;
-            align-items: flex-end;
+    .hero h1 span {
+      display: block;
+    }
 
-            color: white;
+    .hero-subtitle {
+      max-width: 600px;
 
-            border-radius: 5px;
+      margin-top: 28px;
 
-            background-size: cover;
-            background-position: center;
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      color: rgba(255, 255, 255, 0.88);
+    }
 
-            position: relative;
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
 
-            overflow: hidden;
-        }
+      margin-top: 36px;
+    }
 
-        .destination::before {
-            content: "";
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
 
-            position: absolute;
+      min-height: 52px;
+      padding: 0 25px;
 
-            inset: 0;
+      border-radius: 999px;
 
-            background:
-                linear-gradient(
-                    transparent,
-                    rgba(0,0,0,0.7)
-                );
-        }
+      font-size: 0.9rem;
+      font-weight: 700;
 
-        .destination-content {
-            position: relative;
+      transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        color 0.25s ease;
+    }
 
-            z-index: 2;
-        }
+    .button:hover {
+      transform: translateY(-3px);
+    }
 
-        .destination h3 {
-            font-size: 1.5rem;
+    .button-primary {
+      background: var(--white);
+      color: var(--forest);
+    }
 
-            margin-bottom: 5px;
-        }
+    .button-primary:hover {
+      background: var(--cream);
+    }
 
+    .button-outline {
+      border: 1px solid rgba(255, 255, 255, 0.65);
+      color: var(--white);
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(8px);
+    }
 
-        /* FOOTER */
+    .button-outline:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
 
-        footer {
-            background: #18352b;
+    .hero-bottom {
+      position: absolute;
+      z-index: 2;
 
-            color: white;
+      bottom: 28px;
+      left: 50%;
 
-            text-align: center;
+      transform: translateX(-50%);
 
-            padding: 35px 20px;
-        }
+      width: min(92%, var(--max-width));
 
-        footer img {
-            
-    width: 130px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
 
-    filter: brightness(0) invert(1);
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
 
-    display: block;
+      color: rgba(255, 255, 255, 0.7);
+    }
 
-    margin: 0 auto 10px;
-        }
+    .scroll-indicator {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
 
-        footer p {
-            font-size: 0.85rem;
+    .scroll-line {
+      width: 45px;
+      height: 1px;
 
-            opacity: 0.8;
-        }
+      background: rgba(255, 255, 255, 0.65);
+    }
 
-        .instagram-link {
-    display: flex;
 
-    align-items: center;
-    justify-content: center;
+    /* =========================
+       EXPERIENCE SECTION
+    ========================= */
 
-    width: fit-content;
+    .experience {
+      background: var(--cream);
+    }
 
-    margin: 5px auto 12px;
+    .experience-header {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 40px;
 
-    color: #e1306c;
+      margin-bottom: 45px;
+    }
 
-    text-decoration: none;
+    .experience-header .section-intro {
+      max-width: 440px;
+      margin-top: 0;
+    }
 
-    transition: 0.2s;
-}
-        
-.instagram-icon {
-    width: 28px;
-    height: 28px;
+    .experience-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
 
-    fill: none;
+    .experience-card {
+      position: relative;
 
-    stroke: currentColor;
+      min-height: 360px;
 
-    stroke-width: 2;
-}
+      display: flex;
+      align-items: end;
 
-.instagram-dot {
-    fill: currentColor;
+      overflow: hidden;
 
-    stroke: none;
-}
+      border-radius: 18px;
 
-.instagram-link:hover {
-    color: #ff5a8a;
+      background: var(--forest);
 
-    transform: translateY(-2px);
-}
+      transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+    }
 
-        /* MOBILE */
+    .experience-card:hover {
+      transform: translateY(-7px);
+      box-shadow: var(--shadow);
+    }
 
-        @media (max-width: 800px) {
+    .experience-card::before {
+      content: "";
 
-            .nav-container {
-                flex-direction: column;
+      position: absolute;
+      inset: 0;
 
-                gap: 12px;
-            }
+      background:
+        linear-gradient(
+          to top,
+          rgba(8, 20, 15, 0.82),
+          rgba(8, 20, 15, 0.06)
+        );
 
-            nav {
-                gap: 15px;
-            }
+      z-index: 1;
+    }
 
-            .hero {
-                min-height: 550px;
-            }
+    .experience-card-bg {
+      position: absolute;
+      inset: 0;
 
-            .hero h1 {
-                font-size: 3rem;
-            }
+      background-size: cover;
+      background-position: center;
 
-            .hero p {
-                font-size: 1.05rem;
-            }
+      transition: transform 0.6s ease;
+    }
 
-            .cards,
-            .destination-grid {
-                grid-template-columns: 1fr;
-            }
+    .experience-card:hover .experience-card-bg {
+      transform: scale(1.05);
+    }
 
-        }
+    .mountain-bg {
+      background-image: url("images/smokies-overlook.jpg");
+    }
 
-    </style>
+    .trail-bg {
+      background-image:
+        linear-gradient(rgba(15, 40, 29, 0.2), rgba(15, 40, 29, 0.2)),
+        url("images/smokies-overlook.jpg");
+    }
 
+    .views-bg {
+      background-image:
+        linear-gradient(rgba(15, 40, 29, 0.18), rgba(15, 40, 29, 0.18)),
+        url("images/smokies-overlook.jpg");
+    }
+
+    .adventure-bg {
+      background-image:
+        linear-gradient(rgba(15, 40, 29, 0.2), rgba(15, 40, 29, 0.2)),
+        url("images/smokies-overlook.jpg");
+    }
+
+    .experience-content {
+      position: relative;
+      z-index: 2;
+
+      padding: 28px;
+
+      color: var(--white);
+    }
+
+    .experience-number {
+      display: block;
+
+      margin-bottom: 50px;
+
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+
+      color: rgba(255, 255, 255, 0.65);
+    }
+
+    .experience-content h3 {
+      font-family: "Playfair Display", serif;
+
+      font-size: 2rem;
+      line-height: 1;
+
+      margin-bottom: 8px;
+    }
+
+    .experience-content p {
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 0.9rem;
+    }
+
+
+    /* =========================
+       FEATURED ADVENTURE
+    ========================= */
+
+    .featured {
+      background: var(--forest);
+      color: var(--white);
+    }
+
+    .featured-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+
+      min-height: 600px;
+    }
+
+    .featured-image {
+      min-height: 600px;
+
+      background:
+        linear-gradient(
+          rgba(10, 30, 21, 0.12),
+          rgba(10, 30, 21, 0.12)
+        ),
+        url("images/smokies-overlook.jpg");
+
+      background-size: cover;
+      background-position: center;
+    }
+
+    .featured-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      padding: 70px;
+    }
+
+    .featured .eyebrow {
+      color: #b9c8b7;
+    }
+
+    .featured h2 {
+      max-width: 550px;
+
+      font-family: "Playfair Display", serif;
+
+      font-size: clamp(2.6rem, 5vw, 4.8rem);
+      line-height: 1.02;
+    }
+
+    .featured-description {
+      max-width: 500px;
+
+      margin-top: 24px;
+
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    .featured-details {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+
+      margin-top: 30px;
+    }
+
+    .detail {
+      padding: 9px 14px;
+
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 999px;
+
+      font-size: 0.78rem;
+
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    .featured .button {
+      align-self: flex-start;
+      margin-top: 35px;
+    }
+
+
+    /* =========================
+       FINDER
+    ========================= */
+
+    .finder {
+      background: var(--cream-dark);
+    }
+
+    .finder-box {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 60px;
+
+      padding: 70px;
+
+      background: var(--white);
+      border-radius: 24px;
+
+      box-shadow: var(--shadow);
+    }
+
+    .finder-box h2 {
+      font-family: "Playfair Display", serif;
+
+      font-size: clamp(2.4rem, 5vw, 4.2rem);
+      line-height: 1.02;
+
+      color: var(--forest);
+    }
+
+    .finder-box p {
+      margin-top: 20px;
+
+      color: var(--muted);
+    }
+
+    .finder-options {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+
+      align-content: center;
+    }
+
+    .finder-option {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      padding: 19px 20px;
+
+      border: 1px solid #ddd9cf;
+      border-radius: 12px;
+
+      background: var(--cream);
+
+      font-weight: 600;
+
+      cursor: pointer;
+
+      transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    .finder-option:hover {
+      transform: translateY(-2px);
+
+      background: var(--forest);
+      border-color: var(--forest);
+
+      color: var(--white);
+    }
+
+    .finder-arrow {
+      font-size: 1.1rem;
+    }
+
+
+    /* =========================
+       COMMUNITY
+    ========================= */
+
+    .community {
+      background: var(--white);
+    }
+
+    .community-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      gap: 80px;
+
+      align-items: center;
+    }
+
+    .community-copy h2 {
+      max-width: 600px;
+
+      font-family: "Playfair Display", serif;
+
+      font-size: clamp(2.5rem, 5vw, 4.6rem);
+      line-height: 1.02;
+
+      color: var(--forest);
+    }
+
+    .community-copy p {
+      max-width: 530px;
+
+      margin-top: 24px;
+
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .community-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+
+      margin-top: 32px;
+    }
+
+    .button-dark {
+      background: var(--forest);
+      color: var(--white);
+    }
+
+    .button-dark:hover {
+      background: var(--forest-light);
+    }
+
+    .button-light {
+      border: 1px solid #d6d2c8;
+      color: var(--forest);
+      background: var(--cream);
+    }
+
+    .community-visual {
+      position: relative;
+
+      min-height: 500px;
+
+      border-radius: 22px;
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          to top,
+          rgba(10, 30, 21, 0.72),
+          rgba(10, 30, 21, 0.05)
+        ),
+        url("images/smokies-overlook.jpg");
+
+      background-size: cover;
+      background-position: center;
+    }
+
+    .community-quote {
+      position: absolute;
+
+      left: 30px;
+      right: 30px;
+      bottom: 30px;
+
+      padding: 25px;
+
+      border-radius: 14px;
+
+      background: rgba(247, 245, 239, 0.94);
+
+      color: var(--forest);
+    }
+
+    .community-quote strong {
+      display: block;
+
+      font-family: "Playfair Display", serif;
+      font-size: 1.4rem;
+    }
+
+    .community-quote span {
+      display: block;
+
+      margin-top: 5px;
+
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+
+    /* =========================
+       STORIES
+    ========================= */
+
+    .stories {
+      background: var(--cream);
+    }
+
+    .stories-header {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+
+      gap: 30px;
+
+      margin-bottom: 45px;
+    }
+
+    .stories-link {
+      font-weight: 700;
+      color: var(--forest);
+    }
+
+    .stories-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 0.8fr 0.8fr;
+
+      gap: 16px;
+    }
+
+    .story-card {
+      position: relative;
+
+      min-height: 390px;
+
+      overflow: hidden;
+
+      border-radius: 18px;
+
+      background: var(--forest);
+    }
+
+    .story-image {
+      position: absolute;
+      inset: 0;
+
+      background-size: cover;
+      background-position: center;
+
+      transition: transform 0.6s ease;
+    }
+
+    .story-card:hover .story-image {
+      transform: scale(1.05);
+    }
+
+    .story-one {
+      background-image: url("images/smokies-overlook.jpg");
+    }
+
+    .story-two {
+      background-image: url("images/smokies-overlook.jpg");
+    }
+
+    .story-three {
+      background-image: url("images/smokies-overlook.jpg");
+    }
+
+    .story-card::after {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      background:
+        linear-gradient(
+          to top,
+          rgba(7, 20, 14, 0.85),
+          rgba(7, 20, 14, 0.05)
+        );
+    }
+
+    .story-content {
+      position: absolute;
+      z-index: 2;
+
+      left: 25px;
+      right: 25px;
+      bottom: 25px;
+
+      color: var(--white);
+    }
+
+    .story-tag {
+      display: inline-block;
+
+      margin-bottom: 10px;
+
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+
+      color: rgba(255, 255, 255, 0.68);
+    }
+
+    .story-content h3 {
+      font-family: "Playfair Display", serif;
+
+      font-size: 1.8rem;
+      line-height: 1.05;
+    }
+
+
+    /* =========================
+       FINAL CTA
+    ========================= */
+
+    .final-cta {
+      position: relative;
+
+      padding: 130px 0;
+
+      overflow: hidden;
+
+      background: var(--forest);
+      color: var(--white);
+
+      text-align: center;
+    }
+
+    .final-cta::before {
+      content: "";
+
+      position: absolute;
+      width: 600px;
+      height: 600px;
+
+      left: 50%;
+      top: 50%;
+
+      transform: translate(-50%, -50%);
+
+      border-radius: 50%;
+
+      background: rgba(101, 123, 98, 0.13);
+
+      filter: blur(50px);
+    }
+
+    .final-cta-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .final-cta h2 {
+      max-width: 850px;
+      margin: 0 auto;
+
+      font-family: "Playfair Display", serif;
+
+      font-size: clamp(3rem, 7vw, 6rem);
+      line-height: 0.98;
+    }
+
+    .final-cta p {
+      max-width: 600px;
+
+      margin: 25px auto 0;
+
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    .final-cta .button {
+      margin-top: 35px;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      padding: 55px 0 30px;
+
+      background: #10261f;
+      color: var(--white);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr 0.7fr 0.7fr;
+
+      gap: 50px;
+
+      padding-bottom: 45px;
+
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-brand p {
+      max-width: 330px;
+
+      margin-top: 18px;
+
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.9rem;
+    }
+
+    .footer-logo {
+      display: inline-flex;
+
+      padding: 8px 12px;
+
+      background: var(--cream);
+      border-radius: 9px;
+    }
+
+    .footer-logo img {
+      width: 130px;
+    }
+
+    .footer-column h4 {
+      margin-bottom: 16px;
+
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .footer-column a {
+      display: block;
+
+      margin-bottom: 9px;
+
+      color: rgba(255, 255, 255, 0.62);
+
+      font-size: 0.88rem;
+
+      transition: color 0.2s ease;
+    }
+
+    .footer-column a:hover {
+      color: var(--white);
+    }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 20px;
+
+      padding-top: 25px;
+
+      color: rgba(255, 255, 255, 0.45);
+
+      font-size: 0.75rem;
+    }
+
+    .footer-instagram {
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 1000px) {
+
+      .nav-links {
+        gap: 18px;
+      }
+
+      .experience-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .featured-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .featured-image {
+        min-height: 450px;
+      }
+
+      .finder-box {
+        grid-template-columns: 1fr;
+      }
+
+      .community-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .community-visual {
+        min-height: 450px;
+      }
+
+      .stories-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .story-card:first-child {
+        grid-column: span 2;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+
+    @media (max-width: 700px) {
+
+      .section {
+        padding: 75px 0;
+      }
+
+      .navbar {
+        padding-top: 16px;
+      }
+
+      .logo img {
+        width: 120px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        min-height: 88vh;
+      }
+
+      .hero-content {
+        padding-top: 80px;
+      }
+
+      .hero h1 {
+        font-size: clamp(3rem, 15vw, 5rem);
+      }
+
+      .hero-bottom {
+        display: none;
+      }
+
+      .experience-header,
+      .stories-header {
+        display: block;
+      }
+
+      .experience-header .section-intro {
+        margin-top: 18px;
+      }
+
+      .experience-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .experience-card {
+        min-height: 300px;
+      }
+
+      .featured-content {
+        padding: 50px 25px;
+      }
+
+      .featured-image {
+        min-height: 350px;
+      }
+
+      .finder-box {
+        padding: 35px 25px;
+        gap: 35px;
+      }
+
+      .finder-options {
+        grid-template-columns: 1fr;
+      }
+
+      .community-grid {
+        gap: 45px;
+      }
+
+      .community-visual {
+        min-height: 380px;
+      }
+
+      .stories-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .story-card:first-child {
+        grid-column: span 1;
+      }
+
+      .story-card {
+        min-height: 320px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .button {
+        width: 100%;
+      }
+    }
+
+  </style>
 </head>
 
 
 <body>
 
-    <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P5FS5928"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
 
-<!-- NAVIGATION -->
+  <!-- =========================
+       NAVIGATION
+  ========================== -->
 
-<header>
+  <header class="navbar">
 
-    <div class="nav-container">
+    <div class="container nav-inner">
 
-        <a href="index.html" class="logo">
+      <a href="index.html" class="logo">
+        <img
+          src="images/verso-alto-logo.png"
+          alt="Verso Alto"
+        >
+      </a>
+
+      <nav class="nav-links">
+
+        <a href="index.html">Home</a>
+
+        <a href="explore.html">Explore</a>
+
+        <a href="community.html">Community</a>
+
+        <a href="stories.html">Stories</a>
+
+        <a href="about.html">About</a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <main>
+
+    <section class="hero">
+
+      <div class="hero-background"></div>
+
+      <div class="container">
+
+        <div class="hero-content">
+
+          <div class="hero-eyebrow">
+            Explore further. Go higher.
+          </div>
+
+          <h1>
+            Find somewhere
+            <span>worth going.</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            Discover trails, mountains, destinations, and
+            adventures worth remembering.
+          </p>
+
+          <div class="hero-actions">
+
+            <a
+              href="explore.html"
+              class="button button-primary"
+            >
+              Explore Adventures →
+            </a>
+
+            <a
+              href="#finder"
+              class="button button-outline"
+            >
+              I'm not sure where to go
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="hero-bottom">
+
+        <span>
+          Discover your next adventure
+        </span>
+
+        <div class="scroll-indicator">
+          <span>Scroll</span>
+          <span class="scroll-line"></span>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         EXPLORE BY EXPERIENCE
+    ========================== -->
+
+    <section class="section experience">
+
+      <div class="container">
+
+        <div class="experience-header">
+
+          <div>
+
+            <span class="eyebrow">
+              Start exploring
+            </span>
+
+            <h2 class="section-title">
+              Go somewhere new.
+            </h2>
+
+          </div>
+
+          <p class="section-intro">
+            Whether you're looking for a mountain,
+            a great view, or simply something different,
+            start with the kind of experience you want.
+          </p>
+
+        </div>
+
+
+        <div class="experience-grid">
+
+
+          <a href="explore.html" class="experience-card">
+
+            <div class="experience-card-bg mountain-bg"></div>
+
+            <div class="experience-content">
+
+              <span class="experience-number">
+                01
+              </span>
+
+              <h3>Mountains</h3>
+
+              <p>
+                Reach higher places.
+              </p>
+
+            </div>
+
+          </a>
+
+
+          <a href="explore.html" class="experience-card">
+
+            <div class="experience-card-bg trail-bg"></div>
+
+            <div class="experience-content">
+
+              <span class="experience-number">
+                02
+              </span>
+
+              <h3>Trails</h3>
+
+              <p>
+                Find your next hike.
+              </p>
+
+            </div>
+
+          </a>
+
+
+          <a href="explore.html" class="experience-card">
+
+            <div class="experience-card-bg views-bg"></div>
+
+            <div class="experience-content">
+
+              <span class="experience-number">
+                03
+              </span>
+
+              <h3>Views</h3>
+
+              <p>
+                Go where the view is worth it.
+              </p>
+
+            </div>
+
+          </a>
+
+
+          <a href="explore.html" class="experience-card">
+
+            <div class="experience-card-bg adventure-bg"></div>
+
+            <div class="experience-content">
+
+              <span class="experience-number">
+                04
+              </span>
+
+              <h3>Adventure</h3>
+
+              <p>
+                Try something different.
+              </p>
+
+            </div>
+
+          </a>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         FEATURED ADVENTURE
+    ========================== -->
+
+    <section class="featured">
+
+      <div class="featured-grid">
+
+        <div class="featured-image"></div>
+
+        <div class="featured-content">
+
+          <span class="eyebrow">
+            Featured adventure
+          </span>
+
+          <h2>
+            Worth the drive.
+          </h2>
+
+          <p class="featured-description">
+            Mount Mitchell rises above the Blue Ridge
+            Mountains and offers one of the highest
+            viewpoints in the eastern United States.
+          </p>
+
+          <div class="featured-details">
+
+            <span class="detail">
+              6,684 ft
+            </span>
+
+            <span class="detail">
+              Strenuous
+            </span>
+
+            <span class="detail">
+              North Carolina
+            </span>
+
+          </div>
+
+          <a
+            href="mount-mitchell.html"
+            class="button button-primary"
+          >
+            Explore Mount Mitchell →
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         ADVENTURE FINDER
+    ========================== -->
+
+    <section
+      class="section finder"
+      id="finder"
+    >
+
+      <div class="container">
+
+        <div class="finder-box">
+
+          <div>
+
+            <span class="eyebrow">
+              Not sure where to start?
+            </span>
+
+            <h2>
+              Find your next adventure.
+            </h2>
+
+            <p>
+              Tell us what kind of experience you're
+              looking for. We'll help you find somewhere
+              worth going.
+            </p>
+
+          </div>
+
+
+          <div class="finder-options">
+
+            <button class="finder-option">
+              <span>
+                I want a mountain
+              </span>
+
+              <span class="finder-arrow">
+                →
+              </span>
+            </button>
+
+
+            <button class="finder-option">
+              <span>
+                I want a great view
+              </span>
+
+              <span class="finder-arrow">
+                →
+              </span>
+            </button>
+
+
+            <button class="finder-option">
+              <span>
+                I want a challenge
+              </span>
+
+              <span class="finder-arrow">
+                →
+              </span>
+            </button>
+
+
+            <button class="finder-option">
+              <span>
+                I want something peaceful
+              </span>
+
+              <span class="finder-arrow">
+                →
+              </span>
+            </button>
+
+
+            <button class="finder-option">
+              <span>
+                I want to go with friends
+              </span>
+
+              <span class="finder-arrow">
+                →
+              </span>
+            </button>
+
+
+            <button class="finder-option">
+              <span>
+                Surprise me
+              </span>
+
+              <span class="finder-arrow">
+                →
+              </span>
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         COMMUNITY
+    ========================== -->
+
+    <section class="section community">
+
+      <div class="container">
+
+        <div class="community-grid">
+
+
+          <div class="community-copy">
+
+            <span class="eyebrow">
+              Adventure is better shared
+            </span>
+
+            <h2>
+              Find your people.
+            </h2>
+
+            <p>
+              Discover what other people are hiking,
+              share the places you've been, and find
+              others who want to get outside.
+            </p>
+
+            <div class="community-actions">
+
+              <a
+                href="community.html"
+                class="button button-dark"
+              >
+                Explore Community →
+              </a>
+
+              <a
+                href="stories.html"
+                class="button button-light"
+              >
+                Read Stories
+              </a>
+
+            </div>
+
+          </div>
+
+
+          <div class="community-visual">
+
+            <div class="community-quote">
+
+              <strong>
+                Adventure is better when it's shared.
+              </strong>
+
+              <span>
+                Find people. Go somewhere. Make memories.
+              </span>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         STORIES
+    ========================== -->
+
+    <section class="section stories">
+
+      <div class="container">
+
+        <div class="stories-header">
+
+          <div>
+
+            <span class="eyebrow">
+              From the trail
+            </span>
+
+            <h2 class="section-title">
+              Stories worth telling.
+            </h2>
+
+          </div>
+
+          <a
+            href="stories.html"
+            class="stories-link"
+          >
+            View all stories →
+          </a>
+
+        </div>
+
+
+        <div class="stories-grid">
+
+
+          <a href="stories.html" class="story-card">
+
+            <div class="story-image story-one"></div>
+
+            <div class="story-content">
+
+              <span class="story-tag">
+                Why I Hike
+              </span>
+
+              <h3>
+                Sometimes you just need to go somewhere.
+              </h3>
+
+            </div>
+
+          </a>
+
+
+          <a href="stories.html" class="story-card">
+
+            <div class="story-image story-two"></div>
+
+            <div class="story-content">
+
+              <span class="story-tag">
+                Adventure
+              </span>
+
+              <h3>
+                A weekend in the mountains.
+              </h3>
+
+            </div>
+
+          </a>
+
+
+          <a href="stories.html" class="story-card">
+
+            <div class="story-image story-three"></div>
+
+            <div class="story-content">
+
+              <span class="story-tag">
+                Inspiration
+              </span>
+
+              <h3>
+                Go somewhere new.
+              </h3>
+
+            </div>
+
+          </a>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         FINAL CTA
+    ========================== -->
+
+    <section class="final-cta">
+
+      <div class="container">
+
+        <div class="final-cta-content">
+
+          <h2>
+            The next adventure is closer than you think.
+          </h2>
+
+          <p>
+            Find somewhere worth going.
+            Then go.
+          </p>
+
+          <a
+            href="explore.html"
+            class="button button-primary"
+          >
+            Start Exploring →
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+
+        <div class="footer-brand">
+
+          <a
+            href="index.html"
+            class="footer-logo"
+          >
 
             <img
-                src="images/verso-alto-logo.png"
-                alt="Verso Alto logo"
+              src="images/verso-alto-logo.png"
+              alt="Verso Alto"
             >
 
-        </a>
+          </a>
 
-
-        <nav>
-
-            <a href="index.html">Home</a>
-
-            <a href="hiking.html">Hiking</a>
-
-            <a href="travel.html">Travel</a>
-
-            <a href="gear.html">Gear</a>
-
-            <a href="about.html">About</a>
-
-        </nav>
-
-    </div>
-
-</header>
-
-
-
-<!-- HERO -->
-
-<section class="hero">
-
-    <div class="hero-content">
-
-        <h1>Go Higher.</h1>
-
-        <p>
-            Hiking, travel, and outdoor adventure
-            for those looking to explore beyond
-            the ordinary.
-        </p>
-
-        <a href="hiking.html" class="button">
-            Explore Hiking
-        </a>
-
-    </div>
-
-
-    <div class="photo-credit">
-
-        Photo via
-        <a href="https://unsplash.com/" target="_blank">
-            Unsplash
-        </a>
-
-    </div>
-
-</section>
-
-
-
-<!-- EXPLORE -->
-
-<section class="section">
-
-    <h2>Explore Verso Alto</h2>
-
-    <p class="intro">
-
-        Discover trails, destinations, outdoor gear,
-        and travel ideas designed to help you
-        explore more and experience the outdoors.
-
-    </p>
-
-
-    <div class="cards">
-
-
-        <div class="card">
-
-            <h3>🥾 Hiking</h3>
-
-            <p>
-                Discover trails, mountain destinations,
-                hiking tips, and ideas for your next
-                adventure.
-            </p>
-
-            <a href="hiking.html">
-                Explore Hiking →
-            </a>
+          <p>
+            Explore further. Go higher.
+            Discover trails, places, people,
+            and adventures worth remembering.
+          </p>
 
         </div>
 
 
+        <div class="footer-column">
 
-        <div class="card">
+          <h4>
+            Explore
+          </h4>
 
-            <h3>✈️ Travel</h3>
+          <a href="explore.html">
+            Trails
+          </a>
 
-            <p>
-                Find mountain destinations,
-                weekend trips, and outdoor
-                travel inspiration.
-            </p>
+          <a href="explore.html">
+            Mountains
+          </a>
 
-            <a href="travel.html">
-                Explore Travel →
-            </a>
+          <a href="explore.html">
+            Destinations
+          </a>
+
+          <a href="explore.html">
+            Adventures
+          </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+          <h4>
+            Community
+          </h4>
+
+          <a href="community.html">
+            Groups
+          </a>
+
+          <a href="community.html">
+            People
+          </a>
+
+          <a href="stories.html">
+            Stories
+          </a>
 
         </div>
 
 
+        <div class="footer-column">
 
-        <div class="card">
+          <h4>
+            Verso Alto
+          </h4>
 
-            <h3>🎒 Gear</h3>
+          <a href="about.html">
+            About
+          </a>
 
-            <p>
-                Learn about hiking equipment,
-                outdoor essentials, and gear
-                worth bringing on the trail.
-            </p>
+          <a href="#">
+            Contact
+          </a>
 
-            <a href="gear.html">
-                Explore Gear →
-            </a>
+          <a
+            href="https://www.instagram.com/official_versoalto/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Instagram
+          </a>
 
         </div>
 
+
+      </div>
+
+
+      <div class="footer-bottom">
+
+        <span>
+          © 2026 Verso Alto. All rights reserved.
+        </span>
+
+        <span>
+          Explore further. Go higher.
+        </span>
+
+      </div>
 
     </div>
 
-</section>
+  </footer>
 
-
-
-<!-- BRAND STORY -->
-
-<section class="about">
-
-    <div class="section about-content">
-
-        <h2>Why Verso Alto?</h2>
-
-        <p>
-
-            <strong>Verso Alto</strong> means
-            "toward the heights."
-
-            The idea behind the brand is simple:
-            keep exploring, keep growing, and
-            keep moving higher.
-
-            From mountain trails to new
-            destinations, Verso Alto is about
-            getting outside and experiencing
-            something beyond the ordinary.
-
-        </p>
-
-    </div>
-
-</section>
-
-
-
-<!-- DESTINATIONS -->
-
-<section class="section destinations">
-
-    <h2>Places Worth Exploring</h2>
-
-    <p class="intro">
-
-        From the Blue Ridge Mountains to the
-        Rocky Mountains, discover destinations
-        that make you want to get outside.
-
-    </p>
-
-
-    <div class="destination-grid">
-
-
-        <div class="destination"
-            style="
-            background-image:
-            url('https://images.unsplash.com/photo-1563298723-dcfebaa392e3?auto=format&fit=crop&w=1000&q=80');
-            ">
-
-            <div class="destination-content">
-
-                <h3>Blue Ridge Mountains</h3>
-
-                <p>
-                    North Carolina
-                </p>
-
-            </div>
-
-        </div>
-
-
-
-        <div class="destination"
-            style="
-            background-image:
-            url('https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1000&q=80');
-            ">
-
-            <div class="destination-content">
-
-                <h3>Great Smoky Mountains</h3>
-
-                <p>
-                    Tennessee & North Carolina
-                </p>
-
-            </div>
-
-        </div>
-
-
-
-        <div class="destination"
-            style="
-            background-image:
-            url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1000&q=80');
-            ">
-
-            <div class="destination-content">
-
-                <h3>Rocky Mountains</h3>
-
-                <p>
-                    Colorado
-                </p>
-
-            </div>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- FOOTER -->
-
-<footer>
-
-    <img
-        src="images/verso-alto-logo.png"
-        alt="Verso Alto"
-    >
-
-    <a
-        href="https://www.instagram.com/official_versoalto/"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Follow Verso Alto on Instagram"
-        class="instagram-link"
-    >
-        <svg
-            class="instagram-icon"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-        >
-            <rect
-                x="3"
-                y="3"
-                width="18"
-                height="18"
-                rx="5"
-                ry="5"
-            ></rect>
-
-            <circle
-                cx="12"
-                cy="12"
-                r="4"
-            ></circle>
-
-            <circle
-                cx="17.5"
-                cy="6.5"
-                r="1"
-                class="instagram-dot"
-            ></circle>
-        </svg>
-    </a>
-
-    <p>
-        © 2026 Verso Alto.
-        Explore further. Go higher.
-    </p>
-
-</footer>
 
 </body>
-
 </html>
