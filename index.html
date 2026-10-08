@@ -161,18 +161,20 @@
     }
 
     .logo {
-      display: inline-flex;
-      align-items: center;
+  display: inline-flex;
+  align-items: center;
 
-      padding: 8px 12px;
+  transition: transform 0.25s ease;
+}
 
-      background: rgba(247, 245, 239, 0.96);
-      border-radius: 10px;
+.logo:hover {
+  transform: translateY(-2px);
+}
 
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-
-      transition: transform 0.25s ease;
-    }
+.logo img {
+  width: 150px;
+  height: auto;
+}
 
     .logo:hover {
       transform: translateY(-2px);
