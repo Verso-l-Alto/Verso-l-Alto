@@ -1,0 +1,293 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore | Verso Alto</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --forest: #18352b;
+      --cream: #f7f5ef;
+      --sage: #657b62;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--forest);
+      font-family: "DM Sans", sans-serif;
+    }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: auto;
+    }
+
+    .navbar {
+      border-bottom: 1px solid #dce2da;
+    }
+
+    .nav-inner {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .logo {
+      font-family: "Playfair Display", serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      color: var(--forest);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: var(--sage);
+    }
+
+    .hero {
+      padding: 75px 0 45px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      color: var(--sage);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    h1, h2 {
+      font-family: "Playfair Display", serif;
+    }
+
+    h1 {
+      margin: 18px 0;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      line-height: 1.1;
+    }
+
+    .intro {
+      max-width: 650px;
+      margin: auto;
+      line-height: 1.8;
+      color: #53645a;
+    }
+
+    .search-section {
+      padding: 25px 0 85px;
+    }
+
+    .search-card {
+      max-width: 950px;
+      margin: auto;
+      padding: 35px;
+      background: white;
+      border: 1px solid #dce2da;
+      border-radius: 16px;
+      box-shadow: 0 12px 35px #18352b0d;
+    }
+
+    .search-card h2 {
+      margin-top: 0;
+      font-size: 2rem;
+    }
+
+    .search-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    label {
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    input, select {
+      width: 100%;
+      min-height: 48px;
+      padding: 12px;
+      border: 1px solid #cfd8ce;
+      border-radius: 8px;
+      background: white;
+      color: var(--forest);
+      font: inherit;
+    }
+
+    button {
+      width: 100%;
+      min-height: 50px;
+      margin-top: 24px;
+      border: 0;
+      border-radius: 8px;
+      background: var(--forest);
+      color: white;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: var(--sage);
+    }
+
+    .note {
+      color: #647168;
+      font-size: 0.85rem;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    footer {
+      padding: 30px 0;
+      background: var(--forest);
+      color: var(--cream);
+      text-align: center;
+    }
+
+    @media (max-width: 650px) {
+      .nav-inner {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 18px 0;
+      }
+
+      .nav-links {
+        gap: 18px;
+      }
+
+      .hero {
+        padding: 55px 0 35px;
+      }
+
+      .search-card {
+        padding: 22px 18px;
+      }
+
+      .search-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="navbar">
+    <nav class="nav-inner container">
+      <a class="logo" href="index.html">VERSO ALTO</a>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="explore.html">Explore</a>
+        <a href="community.html">Community</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <p class="eyebrow">Find your next adventure</p>
+        <h1>Explore Further.<br>Go Higher.</h1>
+        <p class="intro">
+          Discover hiking trails, mountain views, and outdoor adventures
+          across the United States. Find a destination that inspires you
+          to get outside and explore.
+        </p>
+      </div>
+    </section>
+
+    <section class="search-section" id="find-adventures">
+      <div class="container">
+        <div class="search-card">
+          <h2>Find an Adventure</h2>
+
+          <form action="explore.html" method="get">
+            <div class="search-grid">
+              <div class="field">
+                <label for="destination">State or destination</label>
+                <input id="destination" name="destination" type="text" placeholder="e.g. North Carolina">
+              </div>
+
+              <div class="field">
+                <label for="difficulty">Difficulty</label>
+                <select id="difficulty" name="difficulty">
+                  <option value="">Any difficulty</option>
+                  <option value="easy">Easy</option>
+                  <option value="moderate">Moderate</option>
+                  <option value="hard">Hard</option>
+                  <option value="strenuous">Strenuous</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="distance">Trail distance</label>
+                <select id="distance" name="distance">
+                  <option value="">Any distance</option>
+                  <option value="0-3">0–3 miles</option>
+                  <option value="3-6">3–6 miles</option>
+                  <option value="6-10">6–10 miles</option>
+                  <option value="10-plus">10+ miles</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="type">Adventure type</label>
+                <select id="type" name="type">
+                  <option value="">All adventures</option>
+                  <option value="hiking">Hiking</option>
+                  <option value="mountain">Mountain views</option>
+                  <option value="camping">Camping</option>
+                  <option value="backpacking">Backpacking</option>
+                </select>
+              </div>
+            </div>
+
+            <button type="submit">Search Adventures</button>
+            <p class="note">
+              We're building our adventure collection. Actual trail results
+              will be connected as the site develops.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">Verso Alto — Explore further. Go higher.</div>
+  </footer>
+</body>
+</html>
