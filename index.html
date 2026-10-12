@@ -1327,7 +1327,7 @@
             </a>
 
             <a
-              href="#finder"
+             href="#find-adventures"
               class="button button-outline"
             >
               I'm not sure where to go
@@ -1349,6 +1349,55 @@
 
     </section>
 
+<section class="adventure-search" id="find-adventures">
+  <div class="container">
+    <p class="search-eyebrow">YOUR NEXT ADVENTURE STARTS HERE</p>
+
+    <h2>Find your next trail.</h2>
+
+    <p class="search-description">
+      Discover hiking trails and outdoor adventures across the United States.
+    </p>
+
+    <form class="trail-search-form" id="trail-search-form">
+      <label class="sr-only" for="trail-query">
+        Search by trail, state, or destination
+      </label>
+
+      <div class="search-input-wrap">
+        <span aria-hidden="true">⌕</span>
+        <input
+          type="search"
+          id="trail-query"
+          placeholder="Search a state, trail, or destination..."
+        >
+      </div>
+
+      <label class="sr-only" for="trail-difficulty">
+        Filter by difficulty
+      </label>
+
+      <select id="trail-difficulty">
+        <option value="all">All difficulties</option>
+        <option value="easy">Easy</option>
+        <option value="moderate">Moderate</option>
+        <option value="strenuous">Strenuous</option>
+      </select>
+
+      <button type="submit">Find hikes</button>
+    </form>
+
+    <p class="search-note">
+      Starting with adventures across the United States.
+    </p>
+
+    <div
+      id="trail-results"
+      class="trail-results"
+      aria-live="polite"
+    ></div>
+  </div>
+</section>
 
     <!-- =========================
          EXPLORE BY EXPERIENCE
