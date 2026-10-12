@@ -942,8 +942,14 @@ function searchAdventures(event) {
       adventure.difficulty.charAt(0).toUpperCase() +
       adventure.difficulty.slice(1);
 
-    [adventure.distance + " miles", difficultyLabel, "Hiking"]
-      .forEach(label => {
+    [
+  adventure.distance + " miles",
+  difficultyLabel,
+  adventure.type.includes("hiking") ? "Hiking" :
+    adventure.type.includes("camping") ? "Camping" :
+    adventure.type.includes("backpacking") ? "Backpacking" :
+    "Mountain views"
+].forEach(label => {
         const tag = document.createElement("span");
         tag.className = "trail-tag";
         tag.textContent = label;
@@ -989,7 +995,5 @@ if (form && resultsSection && resultsGrid && resultsCount && noResults) {
   }
 }
 </script>
-</body>
-  
 </body>
 </html>
