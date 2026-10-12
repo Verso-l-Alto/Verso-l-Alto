@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -363,6 +362,128 @@
       font-weight: 700;
     }
 
+/* SEARCH RESULTS */
+.results-section {
+  padding: 0 0 75px;
+}
+
+.results-section[hidden] {
+  display: none;
+}
+
+.results-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.results-heading .eyebrow {
+  margin-bottom: 8px;
+  color: var(--sage);
+}
+
+.results-heading h2 {
+  margin: 0;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+}
+
+#results-count,
+#no-results {
+  color: var(--text);
+  line-height: 1.7;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.trail-result {
+  padding: 23px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.trail-result:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(24, 53, 43, 0.08);
+}
+
+.trail-result h3 {
+  margin: 0 0 8px;
+  font-size: 1.35rem;
+  color: var(--forest);
+}
+
+.trail-location {
+  margin: 0 0 16px;
+  color: var(--text);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.trail-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.trail-tag {
+  padding: 6px 9px;
+  border-radius: 5px;
+  background: #edf1e9;
+  color: var(--forest);
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.trail-result a {
+  display: inline-block;
+  margin-top: 4px;
+  color: var(--sage);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.trail-result a:hover {
+  text-decoration: underline;
+}
+
+/* MOBILE SEARCH RESULTS */
+@media (max-width: 760px) {
+  .results-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .results-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .trail-result {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .results-section {
+    padding-bottom: 50px;
+  }
+
+  .results-grid {
+    gap: 14px;
+  }
+
+  .trail-result h3 {
+    font-size: 1.2rem;
+  }
+}
     /* FOOTER */
 
     .footer {
@@ -598,6 +719,25 @@
       </div>
     </section>
 
+<section class="results-section" id="search-results" hidden>
+  <div class="container">
+    <div class="results-heading">
+      <div>
+        <p class="eyebrow">Your next adventure</p>
+        <h2>Matching Adventures</h2>
+      </div>
+      <p id="results-count" aria-live="polite"></p>
+    </div>
+
+    <div class="results-grid" id="results-grid"></div>
+
+    <p id="no-results" hidden>
+      No adventures match those filters. Try a different destination
+      or broaden your search.
+    </p>
+  </div>
+</section>
+    
     <section class="destinations-section">
       <div class="container">
 
