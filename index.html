@@ -170,25 +170,25 @@
   transition: transform 0.25s ease;
 }
 
+.logo {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
 .logo:hover {
   transform: translateY(-2px);
 }
 
 .logo img {
-  width: 150px;
+  display: block;
+  width: 145px;
+  max-width: 100%;
   height: auto;
+  object-fit: contain;
+  background: transparent;
 }
-
-    .logo:hover {
-      transform: translateY(-2px);
-    }
-
-    .logo img {
-      width: 145px;
-      height: auto;
-    }
-
-   
 
 .nav-links {
   display: flex;
