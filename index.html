@@ -154,14 +154,15 @@
       padding: 22px 0;
     }
 
-    
 .nav-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  box-sizing: border-box;
+  padding-left: clamp(24px, 5vw, 80px);
+  padding-right: clamp(24px, 5vw, 80px);
 }
-
     .logo {
   display: inline-flex;
   align-items: center;
@@ -194,7 +195,6 @@
   align-items: center;
   justify-content: flex-end;
   gap: 28px;
-  margin-left: auto;
 }
 
 .nav-links a {
