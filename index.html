@@ -371,27 +371,18 @@
       background: rgba(255, 255, 255, 0.15);
     }
 
-    .hero-bottom {
-      position: absolute;
-      z-index: 2;
 
-      bottom: 28px;
-      left: 50%;
-
-      transform: translateX(-50%);
-
-      width: min(92%, var(--max-width));
-
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      font-size: 0.75rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-
-      color: rgba(255, 255, 255, 0.7);
-    }
+.hero-bottom {
+  position: absolute;
+  bottom: 30px;
+  left: clamp(24px, 5vw, 80px);
+  right: clamp(24px, 5vw, 80px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 3;
+  text-align: left;
+}
 
     .scroll-indicator {
       display: flex;
