@@ -4,7 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Explore | Verso Alto</title>
+
+  <title>Explore Adventures | Verso Alto</title>
+  <meta name="description" content="Discover hiking trails, mountain views, and outdoor adventures across the United States with Verso Alto.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,10 +17,17 @@
       --forest: #18352b;
       --cream: #f7f5ef;
       --sage: #657b62;
+      --white: #ffffff;
+      --text: #526158;
+      --border: #e1e5dd;
     }
 
     * {
       box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -28,13 +37,26 @@
       font-family: "DM Sans", sans-serif;
     }
 
-    .container {
-      width: min(1100px, 92%);
-      margin: auto;
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: 0 auto;
+    }
+
+    /* NAVIGATION */
+
     .navbar {
-      border-bottom: 1px solid #dce2da;
+      background: var(--cream);
+      border-bottom: 1px solid var(--border);
     }
 
     .nav-inner {
@@ -46,76 +68,134 @@
     }
 
     .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
       font-family: "Playfair Display", serif;
-      font-size: 1.35rem;
+      font-size: 1.3rem;
       font-weight: 700;
-      letter-spacing: 0.05em;
-      text-decoration: none;
+      letter-spacing: 0.055em;
+    }
+
+    .logo img {
+      width: 43px;
+      height: 43px;
+      object-fit: contain;
     }
 
     .nav-links {
       display: flex;
-      flex-wrap: wrap;
-      gap: 25px;
-    }
-
-    .nav-links a {
-      color: var(--forest);
-      text-decoration: none;
+      align-items: center;
+      gap: 28px;
+      font-size: 0.92rem;
       font-weight: 600;
     }
 
-    .nav-links a:hover {
+    .nav-links a {
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
       color: var(--sage);
     }
 
-    .hero {
-      padding: 75px 0 45px;
+    /* MOUNTAIN BANNER */
+
+    .explore-hero {
+      position: relative;
+      min-height: 430px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(13, 35, 27, 0.78),
+          rgba(13, 35, 27, 0.28)
+        ),
+        url("images/smokies-overlook.jpg") center 48% / cover no-repeat;
+      color: var(--white);
+    }
+
+    .hero-content {
+      width: min(850px, 90%);
+      padding: 78px 0;
       text-align: center;
     }
 
     .eyebrow {
-      color: var(--sage);
-      font-size: 0.78rem;
+      margin: 0 0 18px;
+      font-size: 0.76rem;
       font-weight: 700;
-      letter-spacing: 0.15em;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
+      color: #dce5d7;
     }
 
-    h1, h2 {
+    h1,
+    h2,
+    h3 {
       font-family: "Playfair Display", serif;
     }
 
-    h1 {
-      margin: 18px 0;
-      font-size: clamp(2.5rem, 6vw, 4.5rem);
-      line-height: 1.1;
+    .explore-hero h1 {
+      margin: 0 0 20px;
+      font-size: clamp(2.7rem, 6.5vw, 5rem);
+      line-height: 1.08;
+      letter-spacing: -0.035em;
     }
 
-    .intro {
-      max-width: 650px;
-      margin: auto;
+    .hero-description {
+      max-width: 630px;
+      margin: 0 auto;
+      font-size: 1.04rem;
       line-height: 1.8;
-      color: #53645a;
+      color: #f1f2eb;
     }
+
+    .hero-credit {
+      position: absolute;
+      right: 14px;
+      bottom: 10px;
+      font-size: 0.72rem;
+      color: white;
+      text-shadow: 0 1px 4px #000;
+    }
+
+    /* SEARCH PANEL */
 
     .search-section {
-      padding: 25px 0 85px;
+      position: relative;
+      z-index: 2;
+      padding: 0 0 72px;
     }
 
     .search-card {
-      max-width: 950px;
-      margin: auto;
-      padding: 35px;
-      background: white;
-      border: 1px solid #dce2da;
-      border-radius: 16px;
-      box-shadow: 0 12px 35px #18352b0d;
+      width: min(960px, 100%);
+      margin: -38px auto 0;
+      padding: 34px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      box-shadow: 0 15px 45px rgba(24, 53, 43, 0.09);
     }
 
-    .search-card h2 {
-      margin-top: 0;
+    .search-heading {
+      margin-bottom: 25px;
+    }
+
+    .search-heading h2 {
+      margin: 0 0 8px;
       font-size: 2rem;
+    }
+
+    .search-heading p {
+      margin: 0;
+      color: var(--text);
+      line-height: 1.7;
     }
 
     .search-grid {
@@ -127,118 +207,343 @@
     .field {
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 9px;
+      min-width: 0;
     }
 
-    label {
-      font-size: 0.9rem;
+    .field label {
+      font-size: 0.88rem;
       font-weight: 700;
     }
 
-    input, select {
+    .field input,
+    .field select {
       width: 100%;
-      min-height: 48px;
+      min-height: 49px;
       padding: 12px;
-      border: 1px solid #cfd8ce;
-      border-radius: 8px;
+      border: 1px solid #d1d9d0;
+      border-radius: 7px;
       background: white;
       color: var(--forest);
       font: inherit;
     }
 
-    button {
+    .field input:focus,
+    .field select:focus {
+      outline: 2px solid var(--sage);
+      outline-offset: 2px;
+    }
+
+    .search-button {
       width: 100%;
-      min-height: 50px;
+      min-height: 52px;
       margin-top: 24px;
+      padding: 14px 20px;
       border: 0;
-      border-radius: 8px;
+      border-radius: 7px;
       background: var(--forest);
       color: white;
       font: inherit;
       font-weight: 700;
       cursor: pointer;
+      transition: background 0.2s ease;
     }
 
-    button:hover {
+    .search-button:hover {
       background: var(--sage);
     }
 
-    .note {
-      color: #647168;
-      font-size: 0.85rem;
+    .search-note {
+      margin: 14px 0 0;
+      color: #6a756d;
+      font-size: 0.82rem;
       line-height: 1.6;
       text-align: center;
     }
 
-    footer {
-      padding: 30px 0;
-      background: var(--forest);
-      color: var(--cream);
-      text-align: center;
+    /* DESTINATIONS */
+
+    .destinations-section {
+      padding: 15px 0 90px;
     }
 
-    @media (max-width: 650px) {
+    .section-heading {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+
+    .section-heading .eyebrow {
+      margin-bottom: 10px;
+      color: var(--sage);
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+    }
+
+    .section-description {
+      max-width: 410px;
+      margin: 0;
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 0.94rem;
+    }
+
+    .destination-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .destination-card {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      overflow: hidden;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .destination-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(24, 53, 43, 0.09);
+    }
+
+    .destination-art {
+      min-height: 145px;
+      display: flex;
+      align-items: flex-end;
+      padding: 20px;
+      color: white;
+      background: linear-gradient(145deg, #728b78, #18352b);
+    }
+
+    .destination-card:nth-child(2) .destination-art {
+      background: linear-gradient(145deg, #9ca88b, #465e49);
+    }
+
+    .destination-card:nth-child(3) .destination-art {
+      background: linear-gradient(145deg, #899a9a, #354f49);
+    }
+
+    .destination-art span {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .destination-info {
+      padding: 22px;
+    }
+
+    .destination-info h3 {
+      margin: 0 0 10px;
+      font-size: 1.45rem;
+    }
+
+    .destination-info p {
+      margin: 0;
+      color: var(--text);
+      font-size: 0.91rem;
+      line-height: 1.7;
+    }
+
+    .destination-link {
+      display: inline-block;
+      margin-top: 18px;
+      color: var(--sage);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    /* FOOTER */
+
+    .footer {
+      padding: 35px 0;
+      background: var(--forest);
+      color: var(--cream);
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .footer-brand {
+      font-family: "Playfair Display", serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+
+    .footer p {
+      margin: 7px 0 0;
+      color: #d9e0d6;
+      font-size: 0.86rem;
+    }
+
+    .footer-link {
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    /* MOBILE RESPONSIVENESS */
+
+    @media (max-width: 760px) {
       .nav-inner {
+        padding: 16px 0;
         align-items: flex-start;
         flex-direction: column;
-        padding: 18px 0;
+        gap: 14px;
       }
 
       .nav-links {
-        gap: 18px;
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 20px;
+        font-size: 0.88rem;
       }
 
-      .hero {
-        padding: 55px 0 35px;
+      .explore-hero {
+        min-height: 370px;
+        background-position: center;
+      }
+
+      .hero-content {
+        padding: 65px 0;
       }
 
       .search-card {
-        padding: 22px 18px;
+        padding: 25px 20px;
+      }
+
+      .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .destination-grid {
+        grid-template-columns: 1fr;
+        gap: 17px;
+      }
+
+      .destination-art {
+        min-height: 125px;
+      }
+
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .explore-hero {
+        min-height: 340px;
+      }
+
+      .explore-hero h1 {
+        font-size: 2.65rem;
+      }
+
+      .hero-description {
+        font-size: 0.94rem;
+      }
+
+      .search-section {
+        padding-bottom: 55px;
+      }
+
+      .search-card {
+        margin-top: -25px;
+        padding: 22px 17px;
+      }
+
+      .search-heading h2 {
+        font-size: 1.7rem;
       }
 
       .search-grid {
         grid-template-columns: 1fr;
+        gap: 17px;
+      }
+
+      .destinations-section {
+        padding-bottom: 60px;
       }
     }
   </style>
 </head>
 
 <body>
+
   <header class="navbar">
-    <nav class="nav-inner container">
-      <a class="logo" href="index.html">VERSO ALTO</a>
+    <nav class="nav-inner container" aria-label="Main navigation">
+
+      <a class="logo" href="index.html">
+        <img src="images/verso-alto-logo.png" alt="">
+        <span>VERSO ALTO</span>
+      </a>
 
       <div class="nav-links">
         <a href="index.html">Home</a>
-        <a href="explore.html">Explore</a>
-        <a href="community.html">Community</a>
+        <a href="explore.html" class="active" aria-current="page">Explore</a>
+        <a href="index.html#community">Community</a>
       </div>
+
     </nav>
   </header>
 
   <main>
-    <section class="hero">
-      <div class="container">
+
+    <section class="explore-hero">
+      <div class="hero-content">
         <p class="eyebrow">Find your next adventure</p>
         <h1>Explore Further.<br>Go Higher.</h1>
-        <p class="intro">
-          Discover hiking trails, mountain views, and outdoor adventures
-          across the United States. Find a destination that inspires you
-          to get outside and explore.
+        <p class="hero-description">
+          Discover places worth exploring, trails worth taking,
+          and mountain views that make the journey worthwhile.
         </p>
       </div>
+
+      <span class="hero-credit">Photo: NPS</span>
     </section>
 
     <section class="search-section" id="find-adventures">
       <div class="container">
+
         <div class="search-card">
-          <h2>Find an Adventure</h2>
+
+          <div class="search-heading">
+            <h2>Find an Adventure</h2>
+            <p>
+              Tell us what you're looking for and start planning
+              your next outdoor experience.
+            </p>
+          </div>
 
           <form action="explore.html" method="get">
+
             <div class="search-grid">
+
               <div class="field">
                 <label for="destination">State or destination</label>
-                <input id="destination" name="destination" type="text" placeholder="e.g. North Carolina">
+                <input
+                  type="text"
+                  id="destination"
+                  name="destination"
+                  placeholder="e.g. North Carolina"
+                >
               </div>
 
               <div class="field">
@@ -273,21 +578,112 @@
                   <option value="backpacking">Backpacking</option>
                 </select>
               </div>
+
             </div>
 
-            <button type="submit">Search Adventures</button>
-            <p class="note">
-              We're building our adventure collection. Actual trail results
-              will be connected as the site develops.
+            <button class="search-button" type="submit">
+              Search Adventures
+            </button>
+
+            <p class="search-note">
+              We're building our adventure collection. Search filters
+              will become functional as we connect real trail information.
             </p>
+
           </form>
+
         </div>
       </div>
     </section>
+
+    <section class="destinations-section">
+      <div class="container">
+
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Find your kind of adventure</p>
+            <h2>Places to Explore</h2>
+          </div>
+
+          <p class="section-description">
+            Not sure where to go? Start with a region and discover
+            the landscapes, trails, and views that make it special.
+          </p>
+        </div>
+
+        <div class="destination-grid">
+
+          <article class="destination-card">
+            <div class="destination-art">
+              <span>Eastern United States</span>
+            </div>
+
+            <div class="destination-info">
+              <h3>Blue Ridge Mountains</h3>
+              <p>
+                Rolling mountain ridges, forest trails, and scenic
+                overlooks throughout the Appalachian region.
+              </p>
+              <a class="destination-link" href="blue-ridge.html">
+                Explore the Blue Ridge →
+              </a>
+            </div>
+          </article>
+
+          <article class="destination-card">
+            <div class="destination-art">
+              <span>Southern Appalachians</span>
+            </div>
+
+            <div class="destination-info">
+              <h3>Great Smoky Mountains</h3>
+              <p>
+                Explore wooded mountain landscapes, challenging climbs,
+                and peaceful trails surrounded by nature.
+              </p>
+              <a class="destination-link" href="#find-adventures">
+                Find a Smokies Adventure →
+              </a>
+            </div>
+          </article>
+
+          <article class="destination-card">
+            <div class="destination-art">
+              <span>Western United States</span>
+            </div>
+
+            <div class="destination-info">
+              <h3>Rocky Mountains</h3>
+              <p>
+                Discover dramatic peaks, alpine landscapes, and
+                high-elevation adventures across the Rockies.
+              </p>
+              <a class="destination-link" href="rockies.html">
+                Explore the Rockies →
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
   </main>
 
-  <footer>
-    <div class="container">Verso Alto — Explore further. Go higher.</div>
+  <footer class="footer">
+    <div class="container footer-inner">
+
+      <div>
+        <a class="footer-brand" href="index.html">VERSO ALTO</a>
+        <p>Explore further. Go higher.</p>
+      </div>
+
+      <a class="footer-link" href="#find-adventures">
+        Find Your Next Adventure →
+      </a>
+
+    </div>
   </footer>
+
 </body>
 </html>
