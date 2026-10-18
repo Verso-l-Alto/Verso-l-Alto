@@ -1,0 +1,832 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Stories | Verso Alto</title>
+  <meta name="description" content="Discover outdoor stories, mountain adventures, lessons learned on the trail, and inspiration from the Verso Alto community.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --forest: #18352b;
+      --forest-light: #2d5142;
+      --sage: #657b62;
+      --cream: #f7f5ef;
+      --cream-dark: #ebe7dc;
+      --white: #fff;
+      --black: #111714;
+      --muted: #66706a;
+      --border: #e1e5dd;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      color: var(--black);
+      background: var(--cream);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: 94%;
+      max-width: 1600px;
+      margin: 0 auto;
+    }
+
+    /* NAVIGATION */
+
+    .navbar {
+      background: var(--cream);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+      color: var(--forest);
+      font-family: "Playfair Display", serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 0.055em;
+      white-space: nowrap;
+    }
+
+    .logo img {
+      width: 52px;
+      height: 52px;
+      object-fit: contain;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 28px;
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    .nav-links a {
+      color: var(--forest);
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--sage);
+    }
+
+    /* HERO */
+
+    .stories-hero {
+      position: relative;
+      min-height: 425px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      color: var(--white);
+      background:
+        linear-gradient(
+          90deg,
+          rgba(13, 35, 27, 0.82) 0%,
+          rgba(13, 35, 27, 0.52) 55%,
+          rgba(13, 35, 27, 0.12) 100%
+        ),
+        url("images/smokies-overlook.jpg") center 48% / cover no-repeat;
+    }
+
+    .hero-content {
+      width: min(850px, 92%);
+      margin: 0 auto;
+      padding: 75px 0;
+    }
+
+    .eyebrow {
+      margin-bottom: 15px;
+      color: var(--sage);
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .stories-hero .eyebrow {
+      color: #dce5d7;
+    }
+
+    .stories-hero h1 {
+      max-width: 720px;
+      margin-bottom: 20px;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2.8rem, 6.5vw, 5rem);
+      font-weight: 600;
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+    }
+
+    .hero-description {
+      max-width: 580px;
+      margin-bottom: 28px;
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    .hero-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 12px 23px;
+      border: 1px solid var(--white);
+      border-radius: 5px;
+      background: var(--white);
+      color: var(--forest);
+      font-size: 0.9rem;
+      font-weight: 700;
+      transition: background 0.2s ease;
+    }
+
+    .hero-button:hover {
+      background: var(--cream-dark);
+    }
+
+    .hero-credit {
+      position: absolute;
+      right: 14px;
+      bottom: 10px;
+      color: var(--white);
+      font-size: 0.72rem;
+      text-shadow: 0 1px 4px #000;
+    }
+
+    /* FEATURED STORIES */
+
+    .featured-section {
+      padding: 75px 0 85px;
+      background: var(--cream);
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 35px;
+      margin-bottom: 35px;
+    }
+
+    .section-heading-main {
+      max-width: 760px;
+    }
+
+    .section-heading h2 {
+      color: var(--forest);
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2rem, 4vw, 3.1rem);
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    .section-intro {
+      max-width: 380px;
+      color: var(--muted);
+      font-size: 0.94rem;
+      line-height: 1.8;
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .story-card {
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      background: var(--white);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .story-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(24, 53, 43, 0.09);
+    }
+
+    .story-image {
+      height: 220px;
+      overflow: hidden;
+      background: var(--cream-dark);
+    }
+
+    .story-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+
+    .story-card:hover .story-image img {
+      transform: scale(1.04);
+    }
+
+    .story-content {
+      padding: 24px;
+    }
+
+    .story-category {
+      margin-bottom: 10px;
+      color: var(--sage);
+      font-size: 0.73rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .story-content h3 {
+      margin-bottom: 13px;
+      color: var(--forest);
+      font-family: "Playfair Display", serif;
+      font-size: 1.55rem;
+      font-weight: 600;
+      line-height: 1.28;
+    }
+
+    .story-content > p:not(.story-category) {
+      margin-bottom: 20px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.8;
+    }
+
+    .read-more {
+      display: inline-block;
+      color: var(--forest-light);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.035em;
+    }
+
+    .read-more:hover {
+      text-decoration: underline;
+    }
+
+    /* COMMUNITY FEATURE */
+
+    .community-section {
+      padding: 75px 0;
+      border-top: 1px solid var(--border);
+      background: var(--white);
+    }
+
+    .community-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .community-image {
+      min-height: 330px;
+      overflow: hidden;
+      border-radius: 7px;
+      background: var(--cream-dark);
+    }
+
+    .community-image img {
+      width: 100%;
+      height: 100%;
+      min-height: 330px;
+      object-fit: cover;
+    }
+
+    .community-copy h2 {
+      margin-bottom: 18px;
+      color: var(--forest);
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    .community-copy > p:not(.eyebrow) {
+      margin-bottom: 25px;
+      color: var(--muted);
+      line-height: 1.85;
+    }
+
+    .community-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 47px;
+      padding: 12px 22px;
+      border: 1px solid var(--forest-light);
+      border-radius: 5px;
+      background: var(--forest-light);
+      color: var(--white);
+      font-size: 0.88rem;
+      font-weight: 700;
+      transition: background 0.2s ease;
+    }
+
+    .community-button:hover {
+      background: var(--forest);
+    }
+
+    /* CLOSING MESSAGE */
+
+    .closing-section {
+      padding: 65px 0;
+      background: var(--forest);
+      color: var(--white);
+      text-align: center;
+    }
+
+    .closing-section h2 {
+      margin-bottom: 12px;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 500;
+      line-height: 1.25;
+    }
+
+    .closing-section p {
+      max-width: 650px;
+      margin: 0 auto;
+      color: rgba(255, 255, 255, 0.75);
+      line-height: 1.8;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 55px 0 30px;
+      background: #10261f;
+      color: var(--white);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr 0.7fr 0.7fr;
+      gap: 50px;
+      padding-bottom: 45px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-brand p {
+      max-width: 330px;
+      margin-top: 18px;
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.9rem;
+    }
+
+    .footer-logo {
+      display: inline-flex;
+      padding: 8px 12px;
+      border-radius: 9px;
+      background: var(--cream);
+    }
+
+    .footer-logo img {
+      width: 130px;
+    }
+
+    .footer-column h4 {
+      margin-bottom: 16px;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .footer-column a {
+      display: block;
+      margin-bottom: 9px;
+      color: rgba(255, 255, 255, 0.62);
+      font-size: 0.88rem;
+      transition: color 0.2s ease;
+    }
+
+    .footer-column a:hover {
+      color: var(--white);
+    }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding-top: 25px;
+      color: rgba(255, 255, 255, 0.45);
+      font-size: 0.75rem;
+    }
+
+    /* TABLET */
+
+    @media (max-width: 1050px) {
+      .story-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .story-card:last-child {
+        grid-column: 1 / -1;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 35px;
+      }
+
+      .community-grid {
+        gap: 35px;
+      }
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 760px) {
+      .nav-inner {
+        padding: 16px 0;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .nav-links {
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 20px;
+        font-size: 0.88rem;
+      }
+
+      .stories-hero {
+        min-height: 420px;
+      }
+
+      .hero-content {
+        padding: 60px 0;
+      }
+
+      .stories-hero h1 {
+        font-size: clamp(2.5rem, 9vw, 3.5rem);
+      }
+
+      .hero-description {
+        font-size: 0.98rem;
+      }
+
+      .featured-section,
+      .community-section {
+        padding: 60px 0;
+      }
+
+      .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .story-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .story-card:last-child {
+        grid-column: auto;
+      }
+
+      .story-image {
+        height: 250px;
+      }
+
+      .community-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .community-image,
+      .community-image img {
+        min-height: 260px;
+      }
+
+      .closing-section {
+        padding: 55px 0;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .footer-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .logo img {
+        width: 42px;
+        height: 42px;
+      }
+
+      .nav-links {
+        gap: 12px 16px;
+      }
+
+      .story-content {
+        padding: 21px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <header class="navbar">
+    <nav class="nav-inner container" aria-label="Main navigation">
+
+      <a class="logo" href="index.html">
+        <img src="images/verso-alto-logo.png" alt="">
+        <span>VERSO ALTO</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="explore.html">Explore</a>
+        <a href="community.html">Community</a>
+        <a href="stories.html" class="active" aria-current="page">Stories</a>
+        <a href="about.html">About</a>
+      </div>
+
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+
+    <section class="stories-hero">
+      <div class="container hero-content">
+
+        <p class="eyebrow">Real people. Wild places.</p>
+
+        <h1>Every Adventure Has a Story.</h1>
+
+        <p class="hero-description">
+          From first hikes to life-changing summits, discover stories
+          of people who found something meaningful in the mountains
+          and along the way.
+        </p>
+
+        <a href="#featured-stories" class="hero-button">
+          Discover the Stories
+        </a>
+
+      </div>
+
+      <span class="hero-credit">Photo: NPS</span>
+    </section>
+
+    <!-- FEATURED STORIES -->
+
+    <section class="featured-section" id="featured-stories">
+      <div class="container">
+
+        <div class="section-heading">
+          <div class="section-heading-main">
+            <p class="eyebrow">Featured stories</p>
+            <h2>Real Adventures. Lasting Impact.</h2>
+          </div>
+
+          <p class="section-intro">
+            Explore experiences from the outdoors, the lessons people
+            carry home, and the connections that make every journey matter.
+          </p>
+        </div>
+
+        <div class="story-grid">
+
+          <article class="story-card">
+            <div class="story-image">
+              <img
+                src="images/smokies-overlook.jpg"
+                alt="Mountain ridgelines stretching across the horizon"
+                loading="lazy"
+              >
+            </div>
+
+            <div class="story-content">
+              <p class="story-category">Personal Growth</p>
+
+              <h3>The Climb That Changed My Perspective</h3>
+
+              <p>
+                Sometimes stepping away from everyday life helps us
+                see it differently. The mountain can teach us to slow
+                down, keep going, and appreciate the view.
+              </p>
+
+              <a class="read-more" href="community.html">
+                EXPLORE THE COMMUNITY →
+              </a>
+            </div>
+          </article>
+
+          <article class="story-card">
+            <div class="story-image">
+              <img
+                src="images/smokies-overlook.jpg"
+                alt="Sunlight falling across distant mountain peaks"
+                loading="lazy"
+              >
+            </div>
+
+            <div class="story-content">
+              <p class="story-category">Outdoor Experiences</p>
+
+              <h3>Finding Stillness in the Mountains</h3>
+
+              <p>
+                Away from the noise and demands of daily life, time
+                outdoors can create room to reflect, reconnect, and
+                notice the beauty around us.
+              </p>
+
+              <a class="read-more" href="explore.html">
+                FIND YOUR NEXT ADVENTURE →
+              </a>
+            </div>
+          </article>
+
+          <article class="story-card">
+            <div class="story-image">
+              <img
+                src="images/smokies-overlook.jpg"
+                alt="Layers of green mountains beneath an open sky"
+                loading="lazy"
+              >
+            </div>
+
+            <div class="story-content">
+              <p class="story-category">Community</p>
+
+              <h3>Finding Community Along the Trail</h3>
+
+              <p>
+                Shared miles and memorable challenges can turn
+                strangers into friends. Sometimes the people we meet
+                become the best part of the adventure.
+              </p>
+
+              <a class="read-more" href="community.html">
+                MEET THE COMMUNITY →
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- COMMUNITY FEATURE -->
+
+    <section class="community-section">
+      <div class="container community-grid">
+
+        <div class="community-image">
+          <img
+            src="images/smokies-overlook.jpg"
+            alt="A scenic mountain landscape inviting exploration"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="community-copy">
+          <p class="eyebrow">Community &amp; inspiration</p>
+
+          <h2>Stories from the Verso Alto Community</h2>
+
+          <p>
+            Every adventurer has something worth sharing. This is a place
+            to celebrate meaningful experiences, lessons learned outdoors,
+            and the people who inspire us to keep exploring.
+          </p>
+
+          <a href="community.html" class="community-button">
+            Join the Community →
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CLOSING MESSAGE -->
+
+    <section class="closing-section">
+      <div class="container">
+        <h2>Every trail leaves you with something.</h2>
+
+        <p>
+          A new perspective. A stronger friendship. A reason to return.
+          Keep exploring, keep growing, and keep making stories worth sharing.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+
+  <footer>
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">
+            <img src="images/verso-alto-logo.png" alt="Verso Alto">
+          </a>
+
+          <p>
+            Explore further. Go higher.
+            Discover trails, places, people,
+            and adventures worth remembering.
+          </p>
+        </div>
+
+        <div class="footer-column">
+          <h4>Explore</h4>
+          <a href="explore.html">Trails</a>
+          <a href="explore.html">Mountains</a>
+          <a href="explore.html#destinations">Destinations</a>
+          <a href="explore.html#adventure-search">Adventures</a>
+        </div>
+
+        <div class="footer-column">
+          <h4>Community</h4>
+          <a href="community.html">Groups</a>
+          <a href="community.html">People</a>
+          <a href="stories.html">Stories</a>
+        </div>
+
+        <div class="footer-column">
+          <h4>Verso Alto</h4>
+          <a href="about.html">About</a>
+          <a href="index.html#">Contact</a>
+          <a
+            href="https://www.instagram.com/official_versoalto/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Instagram</a>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 Verso Alto. All rights reserved.</span>
+        <span>Explore further. Go higher.</span>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>
