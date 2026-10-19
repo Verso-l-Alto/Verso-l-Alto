@@ -970,27 +970,47 @@
 <script>
   const searchForm = document.getElementById("adventure-search-form");
 
+  // Store adventure records loaded from the JSON database
+  let adventureDatabase = [];
+
+  // Load the adventure database
   fetch("data/adventures.json")
     .then(function (response) {
+      if (!response.ok) {
+        throw new Error("Could not load the adventure database.");
+      }
+
       return response.json();
     })
-    .then(function (adventures) {
-      console.log("Verso Alto adventures loaded:", adventures);
+    .then(function (data) {
+      adventureDatabase = data;
+
+      console.log(
+        "Verso Alto adventures loaded:",
+        adventureDatabase
+      );
     })
     .catch(function (error) {
-      console.error("Could not load adventure database:", error);
+      console.error(
+        "Could not load adventure database:",
+        error
+      );
     });
 
+  // Existing search fields
   const destinationInput = document.getElementById("destination");
   const difficultySelect = document.getElementById("difficulty");
   const distanceSelect = document.getElementById("distance");
   const typeSelect = document.getElementById("adventure-type");
   const searchMessage = document.getElementById("search-message");
   const noResults = document.getElementById("no-results");
+
+  // Keep the existing destination cards
   const destinationCards = Array.from(
     document.querySelectorAll(".destination-card")
   );
 
+  // Search the existing destination cards
   searchForm.addEventListener("submit", function (event) {
     event.preventDefault();
 
@@ -1000,64 +1020,64 @@
     const type = typeSelect.value;
 
     let visibleCount = 0;
-    
-      destinationCards.forEach(function (card) {
-        const cardDestination = card.dataset.destination.toLowerCase();
-        const cardDifficulty = card.dataset.difficulty;
-        const cardDistance = card.dataset.distance;
-        const cardType = card.dataset.type;
 
-        const matchesDestination =
-          !destination || cardDestination.includes(destination);
+    destinationCards.forEach(function (card) {
+      const cardDestination = card.dataset.destination.toLowerCase();
+      const cardDifficulty = card.dataset.difficulty;
+      const cardDistance = card.dataset.distance;
+      const cardType = card.dataset.type;
 
-        const matchesDifficulty =
-          !difficulty || cardDifficulty === difficulty;
+      const matchesDestination =
+        !destination || cardDestination.includes(destination);
 
-        const matchesDistance =
-          !distance || cardDistance === distance;
+      const matchesDifficulty =
+        !difficulty || cardDifficulty === difficulty;
 
-        const matchesType =
-          !type || cardType.includes(type);
+      const matchesDistance =
+        !distance || cardDistance === distance;
 
-        const matches =
-          matchesDestination &&
-          matchesDifficulty &&
-          matchesDistance &&
-          matchesType;
+      const matchesType =
+        !type || cardType.includes(type);
 
-        card.style.display = matches ? "" : "none";
+      const matches =
+        matchesDestination &&
+        matchesDifficulty &&
+        matchesDistance &&
+        matchesType;
 
-        if (matches) {
-          visibleCount++;
-        }
-      });
+      card.style.display = matches ? "" : "none";
 
-      noResults.style.display = visibleCount === 0 ? "block" : "none";
-
-      if (visibleCount === 1) {
-        searchMessage.textContent = "Found 1 matching destination.";
-      } else {
-        searchMessage.textContent =
-          "Found " + visibleCount + " matching destinations.";
+      if (matches) {
+        visibleCount++;
       }
+    });
 
-      document.getElementById("destinations").scrollIntoView({
-        behavior: "smooth",
-        block: "start"
+    noResults.style.display =
+      visibleCount === 0 ? "block" : "none";
+
+    if (visibleCount === 1) {
+      searchMessage.textContent =
+        "Found 1 matching destination.";
+    } else {
+      searchMessage.textContent =
+        "Found " + visibleCount + " matching destinations.";
+    }
+
+    document.getElementById("destinations").scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+  });
+
+  // Reset the search filters
+  searchForm.addEventListener("reset", function () {
+    window.setTimeout(function () {
+      destinationCards.forEach(function (card) {
+        card.style.display = "";
       });
-    });
 
-    searchForm.addEventListener("reset", function () {
-      window.setTimeout(function () {
-        destinationCards.forEach(function (card) {
-          card.style.display = "";
-        });
-
-        noResults.style.display = "none";
-        searchMessage.textContent = "";
-      }, 0);
-    });
-  </script>
-
-</body>
-</html>
+      noResults.style.display = "none";
+      searchMessage.textContent = "";
+    }, 0);
+  });
+</script>
