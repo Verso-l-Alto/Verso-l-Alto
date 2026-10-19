@@ -967,29 +967,40 @@
   </footer>
 
   <!-- SEARCH FUNCTIONALITY -->
+<script>
+  const searchForm = document.getElementById("adventure-search-form");
 
-  <script>
-    const searchForm = document.getElementById("adventure-search-form");
-    const destinationInput = document.getElementById("destination");
-    const difficultySelect = document.getElementById("difficulty");
-    const distanceSelect = document.getElementById("distance");
-    const typeSelect = document.getElementById("adventure-type");
-    const searchMessage = document.getElementById("search-message");
-    const noResults = document.getElementById("no-results");
-    const destinationCards = Array.from(
-      document.querySelectorAll(".destination-card")
-    );
+  fetch("data/adventures.json")
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (adventures) {
+      console.log("Verso Alto adventures loaded:", adventures);
+    })
+    .catch(function (error) {
+      console.error("Could not load adventure database:", error);
+    });
 
-    searchForm.addEventListener("submit", function (event) {
-      event.preventDefault();
+  const destinationInput = document.getElementById("destination");
+  const difficultySelect = document.getElementById("difficulty");
+  const distanceSelect = document.getElementById("distance");
+  const typeSelect = document.getElementById("adventure-type");
+  const searchMessage = document.getElementById("search-message");
+  const noResults = document.getElementById("no-results");
+  const destinationCards = Array.from(
+    document.querySelectorAll(".destination-card")
+  );
 
-      const destination = destinationInput.value.trim().toLowerCase();
-      const difficulty = difficultySelect.value;
-      const distance = distanceSelect.value;
-      const type = typeSelect.value;
+  searchForm.addEventListener("submit", function (event) {
+    event.preventDefault();
 
-      let visibleCount = 0;
+    const destination = destinationInput.value.trim().toLowerCase();
+    const difficulty = difficultySelect.value;
+    const distance = distanceSelect.value;
+    const type = typeSelect.value;
 
+    let visibleCount = 0;
+    
       destinationCards.forEach(function (card) {
         const cardDestination = card.dataset.destination.toLowerCase();
         const cardDifficulty = card.dataset.difficulty;
