@@ -1,1 +1,20 @@
-json     []
+[
+  {
+    "id": "mount-mitchell-nc",
+    "name": "Mount Mitchell",
+    "state": "North Carolina",
+    "location": "Mount Mitchell State Park",
+    "type": "Mountain Summit",
+    "difficulty": "Strenuous",
+    "distanceMiles": null,
+    "elevationGainFeet": null,
+    "estimatedHours": null,
+    "scenery": [
+      "Mountain Views",
+      "Blue Ridge Mountains",
+      "Summit"
+    ],
+    "description": "Visit the highest peak east of the Mississippi River and experience the surrounding Blue Ridge Mountains.",
+    "sourceUrl": "https://www.ncparks.gov/state-parks/mount-mitchell-state-park"
+  }
+]
