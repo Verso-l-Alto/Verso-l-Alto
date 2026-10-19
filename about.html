@@ -60,37 +60,37 @@
 
     /* HEADER */
 
-    .site-header {
+    .navbar {
       position: relative;
       z-index: 10;
       background: var(--cream);
-      border-bottom: 1px solid rgba(24, 53, 43, 0.08);
+      border-bottom: 1px solid var(--border);
     }
 
-    .nav-container {
-      width: min(1400px, 94%);
-      min-height: 88px;
-      margin: 0 auto;
+    .nav-inner {
+      min-height: 82px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 30px;
+      gap: 24px;
     }
 
     .logo {
       display: inline-flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       flex-shrink: 0;
       color: var(--forest);
-      font-size: 1.12rem;
+      font-family: "Playfair Display", serif;
+      font-size: 1.5rem;
       font-weight: 700;
-      letter-spacing: 0.15em;
+      letter-spacing: 0.055em;
+      white-space: nowrap;
     }
 
     .logo img {
-      width: 48px;
-      height: 48px;
+      width: 52px;
+      height: 52px;
       object-fit: contain;
     }
 
@@ -98,77 +98,32 @@
       display: flex;
       align-items: center;
       justify-content: flex-end;
-      gap: 32px;
+      gap: 28px;
+      font-size: 0.92rem;
+      font-weight: 600;
     }
 
-    
-/* HEADER */
+    .nav-links a {
+      position: relative;
+      padding: 8px 0;
+      color: var(--forest);
+      transition: color 0.2s ease;
+    }
 
-.navbar {
-  position: relative;
-  z-index: 10;
-  background: var(--cream);
-  border-bottom: 1px solid var(--border);
-}
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--sage);
+    }
 
-.nav-inner {
-  min-height: 82px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-}
-
-.logo {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
-  color: var(--forest);
-  font-family: "Playfair Display", serif;
-  font-size: 1.5rem;
-  font-weight: 700;
-  letter-spacing: 0.055em;
-  white-space: nowrap;
-}
-
-.logo img {
-  width: 52px;
-  height: 52px;
-  object-fit: contain;
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 28px;
-  font-size: 0.92rem;
-  font-weight: 600;
-}
-
-.nav-links a {
-  position: relative;
-  padding: 8px 0;
-  color: var(--forest);
-  transition: color 0.2s ease;
-}
-
-.nav-links a:hover,
-.nav-links a.active {
-  color: var(--sage);
-}
-
-.nav-links a.active::after {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  height: 2px;
-  background: var(--sage);
-  content: "";
-}
-
+    .nav-links a.active::after {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      background: var(--sage);
+      content: "";
+    }
 
     /* ABOUT HERO */
 
@@ -495,13 +450,14 @@
 
     @media (max-width: 850px) {
       .nav-inner {
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 18px 0;
-  gap: 15px;
-}
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 18px 0;
+        gap: 15px;
+      }
+
       .nav-links {
-        justify-content: center;
+        justify-content: flex-end;
         flex-wrap: wrap;
         gap: 12px 24px;
       }
@@ -578,23 +534,22 @@
 
   <!-- HEADER -->
 
+  <header class="navbar">
+    <nav class="nav-inner container" aria-label="Main navigation">
+      <a class="logo" href="index.html">
+        <img src="images/verso-alto-logo.png" alt="">
+        <span>VERSO ALTO</span>
+      </a>
 
-<header class="navbar">
-  <nav class="nav-inner container" aria-label="Main navigation">
-    <a class="logo" href="index.html">
-      <img src="images/verso-alto-logo.png" alt="">
-      <span>VERSO ALTO</span>
-    </a>
-
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="explore.html">Explore</a>
-      <a href="community.html">Community</a>
-      <a href="stories.html">Stories</a>
-      <a href="about.html" class="active" aria-current="page">About</a>
-    </div>
-  </nav>
-</header>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="explore.html">Explore</a>
+        <a href="community.html">Community</a>
+        <a href="stories.html">Stories</a>
+        <a href="about.html" class="active" aria-current="page">About</a>
+      </div>
+    </nav>
+  </header>
 
   <main>
 
