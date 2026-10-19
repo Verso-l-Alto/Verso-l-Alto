@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>About Verso Alto | Explore Further. Go Higher.</title>
-  <meta name="description" content="Discover the mission behind Verso Alto, an adventure finder built to help you explore new places, find meaningful outdoor experiences, and go higher.">
-  <meta name="theme-color" content="#18352b">
+  <meta name="description" content="Learn about Verso Alto, an adventure finder built to help you discover meaningful outdoor experiences, explore new places, and go higher.">
+  <meta name="theme-color" content="#f7f5ef">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,11 +19,11 @@
       --forest-light: #2d5142;
       --sage: #657b62;
       --cream: #f7f5ef;
-      --cream-dark: #ebe7dc;
+      --cream-dark: #f0ede4;
       --white: #ffffff;
-      --text: #28352e;
+      --text: #26352d;
       --muted: #68736b;
-      --border: #e4e0d6;
+      --border: #e3e0d6;
     }
 
     * {
@@ -37,9 +37,9 @@
     }
 
     body {
-      font-family: "DM Sans", sans-serif;
-      color: var(--text);
       background: var(--cream);
+      color: var(--text);
+      font-family: "DM Sans", sans-serif;
       line-height: 1.7;
     }
 
@@ -58,17 +58,18 @@
       margin: 0 auto;
     }
 
-    /* HEADER */
+    /* NAVIGATION */
 
     .navbar {
-      position: relative;
-      z-index: 10;
+      width: 100%;
       background: var(--cream);
       border-bottom: 1px solid var(--border);
     }
 
     .nav-inner {
+      width: min(1160px, 90%);
       min-height: 82px;
+      margin: 0 auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -99,13 +100,12 @@
       align-items: center;
       justify-content: flex-end;
       gap: 28px;
+      margin-left: auto;
       font-size: 0.92rem;
       font-weight: 600;
     }
 
     .nav-links a {
-      position: relative;
-      padding: 8px 0;
       color: var(--forest);
       transition: color 0.2s ease;
     }
@@ -115,56 +115,47 @@
       color: var(--sage);
     }
 
-    .nav-links a.active::after {
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      height: 2px;
-      background: var(--sage);
-      content: "";
-    }
-
-    /* ABOUT HERO */
+    /* HERO */
 
     .about-hero {
       position: relative;
-      min-height: 440px;
+      min-height: 530px;
       display: flex;
       align-items: center;
-      overflow: hidden;
-      color: var(--white);
+      justify-content: center;
+      padding: 100px 0;
       background:
         linear-gradient(
-          rgba(13, 35, 27, 0.55),
-          rgba(13, 35, 27, 0.64)
+          90deg,
+          rgba(13, 34, 26, 0.76),
+          rgba(13, 34, 26, 0.34)
         ),
         url("images/smokies-overlook.jpg") center 48% / cover no-repeat;
+      color: var(--white);
     }
 
     .hero-content {
-      width: min(850px, 92%);
+      width: min(850px, 90%);
       margin: 0 auto;
-      padding: 85px 0;
       text-align: center;
     }
 
     .eyebrow {
       margin-bottom: 18px;
-      color: #dce5d7;
-      font-size: 0.76rem;
+      color: #d5dfcf;
+      font-size: 0.78rem;
       font-weight: 700;
       letter-spacing: 0.18em;
       text-transform: uppercase;
     }
 
     .about-hero h1 {
-      margin-bottom: 22px;
+      max-width: 800px;
+      margin: 0 auto 24px;
       font-family: "Playfair Display", serif;
-      font-size: clamp(2.8rem, 6.5vw, 5rem);
-      font-weight: 600;
-      line-height: 1.1;
-      letter-spacing: -0.035em;
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      font-weight: 500;
+      line-height: 1.12;
     }
 
     .hero-description {
@@ -175,155 +166,142 @@
       line-height: 1.9;
     }
 
-    .hero-credit {
+    .photo-credit {
       position: absolute;
-      right: 14px;
-      bottom: 10px;
-      color: var(--white);
-      font-size: 0.72rem;
-      text-shadow: 0 1px 4px #000;
+      right: 5%;
+      bottom: 16px;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 0.7rem;
     }
 
     /* INTRODUCTION */
 
     .about-intro {
-      padding: 100px 0;
+      padding: 105px 0;
       background: var(--cream);
     }
 
     .intro-grid {
       display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      align-items: center;
+      grid-template-columns: 0.85fr 1.15fr;
+      align-items: start;
       gap: 85px;
     }
 
-    .intro-heading .eyebrow {
+    .section-label {
+      margin-bottom: 18px;
       color: var(--sage);
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
     }
 
-    .intro-heading h2 {
-      font-family: "Playfair Display", serif;
+    .section-heading {
       color: var(--forest);
-      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
       font-weight: 500;
       line-height: 1.2;
     }
 
-    .intro-copy p {
-      margin-bottom: 22px;
+    .intro-copy p,
+    .mission-copy p {
+      margin-bottom: 20px;
       color: var(--muted);
       font-size: 1rem;
       line-height: 1.95;
     }
 
-    .intro-copy p:last-child {
+    .intro-copy p:last-child,
+    .mission-copy p:last-child {
       margin-bottom: 0;
     }
 
-    /* BRAND STATEMENT */
+    /* MISSION */
 
     .mission-section {
       padding: 105px 0;
       background: var(--forest);
       color: var(--white);
-      text-align: center;
     }
 
-    .mission-content {
-      max-width: 820px;
-      margin: 0 auto;
+    .mission-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 85px;
     }
 
-    .mission-section .eyebrow {
-      color: #c5d2bd;
+    .mission-section .section-label {
+      color: #c3d0bb;
     }
 
-    .mission-section h2 {
+    .mission-section .section-heading {
       margin-bottom: 25px;
+      color: var(--white);
+    }
+
+    .mission-copy p {
+      color: rgba(255, 255, 255, 0.78);
+    }
+
+    .mission-statement {
+      padding: 35px;
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      border-radius: 4px;
+    }
+
+    .mission-statement p {
+      color: var(--white);
       font-family: "Playfair Display", serif;
-      font-size: clamp(2.3rem, 5vw, 4rem);
-      font-weight: 500;
-      line-height: 1.2;
+      font-size: clamp(1.7rem, 3vw, 2.5rem);
+      line-height: 1.45;
     }
 
-    .mission-section p {
-      max-width: 680px;
-      margin: 0 auto;
-      color: rgba(255, 255, 255, 0.83);
-      font-size: 1.04rem;
-      line-height: 1.9;
-    }
-
-    /* OUR VALUES */
+    /* VALUES */
 
     .values-section {
-      padding: 100px 0;
-      background: var(--white);
+      padding: 105px 0;
+      background: var(--cream-dark);
     }
 
-    .section-heading {
-      max-width: 700px;
-      margin: 0 auto 58px;
+    .values-heading {
+      max-width: 680px;
+      margin: 0 auto 55px;
       text-align: center;
     }
 
-    .section-heading .eyebrow {
-      color: var(--sage);
-    }
-
-    .section-heading h2 {
+    .values-heading .section-heading {
       margin-bottom: 18px;
-      color: var(--forest);
-      font-family: "Playfair Display", serif;
-      font-size: clamp(2.2rem, 4vw, 3.3rem);
-      font-weight: 500;
-      line-height: 1.2;
     }
 
-    .section-heading p {
+    .values-intro {
       color: var(--muted);
-      font-size: 1rem;
+      line-height: 1.9;
     }
 
     .values-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 28px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
     }
 
     .value-card {
-      padding: 38px 30px;
-      border: 1px solid var(--border);
-      border-radius: 8px;
+      min-height: 245px;
+      padding: 32px;
       background: var(--cream);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .value-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 30px rgba(24, 53, 43, 0.07);
-    }
-
-    .value-icon {
-      width: 48px;
-      height: 48px;
-      margin-bottom: 24px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      background: #e3e9df;
-      color: var(--forest);
-      font-size: 1.3rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
     }
 
     .value-card h3 {
-      margin-bottom: 14px;
+      margin-bottom: 15px;
       color: var(--forest);
       font-family: "Playfair Display", serif;
       font-size: 1.55rem;
-      font-weight: 600;
+      font-weight: 500;
+      line-height: 1.35;
     }
 
     .value-card p {
@@ -332,63 +310,54 @@
       line-height: 1.85;
     }
 
-    /* CLOSING SECTION */
+    /* CLOSING CTA */
 
     .closing-section {
       padding: 100px 0;
-      background: var(--cream-dark);
+      background: var(--cream);
       text-align: center;
     }
 
     .closing-content {
-      max-width: 760px;
+      width: min(760px, 90%);
       margin: 0 auto;
     }
 
-    .closing-content .eyebrow {
-      color: var(--sage);
+    .closing-section .section-heading {
+      margin-bottom: 20px;
     }
 
-    .closing-content h2 {
-      margin-bottom: 22px;
-      color: var(--forest);
-      font-family: "Playfair Display", serif;
-      font-size: clamp(2.3rem, 4.5vw, 3.7rem);
-      font-weight: 500;
-      line-height: 1.2;
-    }
-
-    .closing-content p {
-      margin-bottom: 30px;
+    .closing-section p {
+      max-width: 620px;
+      margin: 0 auto 30px;
       color: var(--muted);
-      font-size: 1rem;
       line-height: 1.9;
     }
 
-    .hero-button {
+    .primary-button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 50px;
-      padding: 13px 25px;
-      border: 1px solid var(--forest);
-      border-radius: 5px;
+      padding: 14px 25px;
       background: var(--forest);
+      border: 1px solid var(--forest);
+      border-radius: 3px;
       color: var(--white);
-      font-size: 0.9rem;
-      font-weight: 700;
-      transition: background 0.2s ease, color 0.2s ease;
+      font-size: 0.92rem;
+      font-weight: 600;
+      transition: background 0.2s ease, border-color 0.2s ease;
     }
 
-    .hero-button:hover {
+    .primary-button:hover {
       background: var(--forest-light);
+      border-color: var(--forest-light);
     }
 
     /* FOOTER */
 
     .site-footer {
       padding: 65px 0 25px;
-      background: var(--forest);
+      background: #142c23;
       color: var(--white);
     }
 
@@ -396,38 +365,44 @@
       display: grid;
       grid-template-columns: 1.5fr 1fr 1fr 1fr;
       gap: 45px;
-      padding-bottom: 48px;
+      padding-bottom: 45px;
     }
 
-    .footer-brand img {
-      width: 55px;
-      height: 55px;
-      margin-bottom: 18px;
-      object-fit: contain;
+    .footer-brand {
+      max-width: 280px;
+    }
+
+    .footer-logo {
+      display: inline-block;
+      margin-bottom: 15px;
+      color: var(--white);
+      font-family: "Playfair Display", serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 0.055em;
     }
 
     .footer-brand p {
-      max-width: 270px;
-      color: rgba(255, 255, 255, 0.72);
+      color: rgba(255, 255, 255, 0.68);
       font-size: 0.9rem;
       line-height: 1.8;
     }
 
     .footer-column h3 {
-      margin-bottom: 18px;
+      margin-bottom: 17px;
       color: var(--white);
-      font-size: 0.82rem;
+      font-size: 0.83rem;
       font-weight: 700;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
     }
 
     .footer-column a {
       display: block;
       width: fit-content;
-      margin-bottom: 11px;
-      color: rgba(255, 255, 255, 0.72);
-      font-size: 0.88rem;
+      margin-bottom: 10px;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.9rem;
       transition: color 0.2s ease;
     }
 
@@ -437,34 +412,31 @@
 
     .footer-bottom {
       display: flex;
-      align-items: center;
       justify-content: space-between;
       gap: 20px;
-      padding-top: 24px;
+      padding-top: 22px;
       border-top: 1px solid rgba(255, 255, 255, 0.16);
-      color: rgba(255, 255, 255, 0.62);
+      color: rgba(255, 255, 255, 0.55);
       font-size: 0.8rem;
     }
 
-    /* RESPONSIVE DESIGN */
+    /* RESPONSIVE */
 
     @media (max-width: 850px) {
       .nav-inner {
-        flex-wrap: wrap;
-        justify-content: space-between;
         padding: 18px 0;
-        gap: 15px;
+        gap: 18px;
       }
 
       .nav-links {
-        justify-content: flex-end;
-        flex-wrap: wrap;
-        gap: 12px 24px;
+        gap: 12px 20px;
+        font-size: 0.88rem;
       }
 
-      .intro-grid {
+      .intro-grid,
+      .mission-grid {
         grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 35px;
       }
 
       .values-grid {
@@ -477,54 +449,92 @@
       }
     }
 
-    @media (max-width: 560px) {
-      .logo {
-        font-size: 1rem;
+    @media (max-width: 600px) {
+      .nav-inner {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 14px;
       }
 
       .logo img {
-        width: 40px;
-        height: 40px;
+        width: 44px;
+        height: 44px;
+      }
+
+      .logo {
+        font-size: 1.35rem;
       }
 
       .nav-links {
-        gap: 8px 18px;
-      }
-
-      .nav-links a {
-        font-size: 0.82rem;
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 12px 20px;
+        margin-left: 0;
+        font-size: 0.86rem;
       }
 
       .about-hero {
-        min-height: 400px;
+        min-height: 460px;
+        padding: 80px 0;
       }
 
-      .hero-content {
-        padding: 70px 0;
+      .about-hero h1 {
+        font-size: clamp(2.5rem, 11vw, 3.5rem);
+      }
+
+      .hero-description {
+        font-size: 0.98rem;
       }
 
       .about-intro,
-      .values-section,
-      .closing-section {
-        padding: 70px 0;
-      }
-
-      .mission-section {
+      .mission-section,
+      .values-section {
         padding: 75px 0;
       }
 
-      .values-grid,
-      .footer-grid {
+      .values-grid {
         grid-template-columns: 1fr;
       }
 
       .value-card {
-        padding: 30px 25px;
+        min-height: auto;
+      }
+
+      .mission-statement {
+        padding: 25px;
+      }
+
+      .closing-section {
+        padding: 75px 0;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px 20px;
+      }
+
+      .footer-brand {
+        grid-column: 1 / -1;
       }
 
       .footer-bottom {
         flex-direction: column;
-        align-items: flex-start;
+        gap: 8px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .nav-links {
+        gap: 10px 14px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-brand {
+        grid-column: auto;
       }
     }
   </style>
@@ -532,10 +542,9 @@
 
 <body>
 
-  <!-- HEADER -->
-
+  <!-- NAVIGATION -->
   <header class="navbar">
-    <nav class="nav-inner container" aria-label="Main navigation">
+    <nav class="nav-inner" aria-label="Main navigation">
       <a class="logo" href="index.html">
         <img src="images/verso-alto-logo.png" alt="">
         <span>VERSO ALTO</span>
@@ -553,149 +562,144 @@
 
   <main>
 
-    <!-- ABOUT HERO -->
-
+    <!-- HERO -->
     <section class="about-hero">
       <div class="hero-content">
-        <p class="eyebrow">The story behind Verso Alto</p>
-        <h1>There is more out there. Go find it.</h1>
+        <p class="eyebrow">Our Story</p>
+        <h1>There's More Out There.</h1>
         <p class="hero-description">
-          We believe the outdoors offers more than a destination.
-          It offers perspective, connection, challenge, and the chance
-          to discover something greater along the way.
+          Verso Alto was created to help people discover meaningful adventures,
+          find new perspectives, and experience more of the world around them.
         </p>
       </div>
 
-      <span class="hero-credit">
+      <p class="photo-credit">
         Photo: Great Smoky Mountains National Park
-      </span>
+      </p>
     </section>
 
-    <!-- OUR STORY -->
-
+    <!-- INTRODUCTION -->
     <section class="about-intro">
       <div class="container intro-grid">
-
-        <div class="intro-heading">
-          <p class="eyebrow">Our story</p>
-          <h2>Built for the moments that move you.</h2>
+        <div>
+          <p class="section-label">Why Verso Alto</p>
+          <h2 class="section-heading">
+            The best adventures begin with a place worth discovering.
+          </h2>
         </div>
 
         <div class="intro-copy">
           <p>
-            Verso Alto began with a simple idea: finding your next
-            adventure should be just as exciting as experiencing it.
-            With so many incredible places to discover, choosing where
-            to go can sometimes feel overwhelming.
+            Finding your next adventure should feel exciting, not overwhelming.
+            With so many places to explore, it can be difficult to know where
+            to start, which destinations are worth the effort, or which
+            adventure fits the time you have available.
           </p>
 
           <p>
-            We wanted to make that decision easier. Whether you have
-            a free afternoon, a weekend to explore, or a destination
-            you've dreamed about for years, Verso Alto is here to help
-            you find an adventure that fits your interests, abilities,
-            and the experience you're looking for.
+            Verso Alto is being built to make that search simpler. Instead of
+            sorting through endless lists, our goal is to help you discover
+            places that fit what you're looking for, whether that's a mountain
+            summit, a beautiful overlook, a challenging climb, or a new
+            destination to explore.
           </p>
 
           <p>
-            But this is about more than finding trails on a map.
-            It's about getting outside, spending time with people who
-            matter, welcoming a challenge, and returning home with
-            stories worth sharing.
+            More than a directory of trails, Verso Alto is an adventure finder
+            designed around the experience you're hoping to have.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MISSION -->
+    <section class="mission-section">
+      <div class="container mission-grid">
+        <div class="mission-copy">
+          <p class="section-label">Our Mission</p>
+          <h2 class="section-heading">
+            Help people get out there and go higher.
+          </h2>
+
+          <p>
+            We believe adventure can be about more than reaching a destination.
+            It can create space to reflect, build friendships, challenge
+            yourself, and appreciate the beauty of the world around you.
+          </p>
+
+          <p>
+            Our mission is to make discovering those experiences easier and
+            encourage people to explore with curiosity, purpose, and a
+            willingness to grow along the way.
           </p>
         </div>
 
+        <div class="mission-statement">
+          <p>
+            Explore further. Go higher. Find something worth the journey.
+          </p>
+        </div>
       </div>
     </section>
 
-    <!-- OUR MISSION -->
-
-    <section class="mission-section">
-      <div class="container mission-content">
-        <p class="eyebrow">Our mission</p>
-
-        <h2>Explore further. Go higher.</h2>
-
-        <p>
-          Our mission is to help people discover meaningful outdoor
-          experiences and feel inspired to pursue them. We want to
-          make adventure more approachable, encourage exploration
-          beyond the familiar, and create a community that finds
-          purpose in the journey as much as the destination.
-        </p>
-      </div>
-    </section>
-
-    <!-- OUR VALUES -->
-
+    <!-- VALUES -->
     <section class="values-section">
       <div class="container">
-
-        <div class="section-heading">
-          <p class="eyebrow">What guides us</p>
-          <h2>More than reaching the summit.</h2>
-          <p>
-            The best adventures leave something with you long after
-            the journey ends.
+        <div class="values-heading">
+          <p class="section-label">What Guides Us</p>
+          <h2 class="section-heading">
+            More than the destination.
+          </h2>
+          <p class="values-intro">
+            The way we explore matters just as much as the places we discover.
           </p>
         </div>
 
         <div class="values-grid">
-
           <article class="value-card">
-            <div class="value-icon" aria-hidden="true">⌁</div>
-            <h3>Explore with purpose</h3>
+            <h3>Adventure with Purpose</h3>
             <p>
-              Every journey can be an opportunity to grow, find
-              perspective, and appreciate the world around us.
-              We believe adventure is about more than simply
-              checking a destination off a list.
+              The outdoors gives us opportunities to step away from routine,
+              challenge ourselves, gain perspective, and appreciate something
+              bigger than our everyday lives.
             </p>
           </article>
 
           <article class="value-card">
-            <div class="value-icon" aria-hidden="true">♧</div>
-            <h3>Grow through challenge</h3>
+            <h3>Community and Brotherhood</h3>
             <p>
-              The outdoors invites us to step beyond our comfort
-              zones, develop resilience, and discover what we are
-              capable of. Progress happens when we are willing
-              to take the next step.
+              Great experiences become even more meaningful when shared.
+              We want to encourage people to connect, support one another,
+              and build lasting friendships through adventure.
             </p>
           </article>
 
           <article class="value-card">
-            <div class="value-icon" aria-hidden="true">♡</div>
-            <h3>Find strength together</h3>
+            <h3>Discover More</h3>
             <p>
-              Some of the best memories are made alongside others.
-              We want to encourage friendship, community, and a
-              spirit of brotherhood rooted in helping one another
-              experience more of what life has to offer.
+              There is always somewhere new to go and something new to learn.
+              We want to help people look beyond the familiar and find
+              adventures that inspire them to keep exploring.
             </p>
           </article>
-
         </div>
       </div>
     </section>
 
-    <!-- CLOSING SECTION -->
-
+    <!-- CLOSING CTA -->
     <section class="closing-section">
-      <div class="container closing-content">
-        <p class="eyebrow">Your next chapter starts outside</p>
-
-        <h2>The world is waiting. Find your way out there.</h2>
-
+      <div class="closing-content">
+        <p class="section-label">Your Next Adventure</p>
+        <h2 class="section-heading">
+          There's a place out there for you.
+        </h2>
         <p>
-          You don't need to have every detail figured out.
-          Start with a place that inspires you, an experience
-          you've been wanting to try, or a simple desire to
-          see something new. We'll help you find a place to begin.
+          Whether you know exactly where you want to go or need a little
+          inspiration, start exploring and find an adventure worth taking.
         </p>
 
-        <a href="explore.html" class="hero-button">
-          Find Your Next Adventure
+        <a class="primary-button" href="explore.html">
+          Explore Adventures
         </a>
       </div>
     </section>
@@ -703,21 +707,15 @@
   </main>
 
   <!-- FOOTER -->
-
   <footer class="site-footer">
     <div class="container">
-
       <div class="footer-grid">
 
         <div class="footer-brand">
-          <a href="index.html">
-            <img src="images/verso-alto-logo.png" alt="Verso Alto">
-          </a>
-
+          <a class="footer-logo" href="index.html">VERSO ALTO</a>
           <p>
-            Explore further. Go higher.
-            Discover places that inspire you to get outside
-            and make the most of the journey.
+            Explore further. Go higher. Find your next adventure and discover
+            more of the world around you.
           </p>
         </div>
 
@@ -741,16 +739,16 @@
           <a href="about.html">About</a>
           <a href="index.html#">Contact</a>
           <a href="https://www.instagram.com/official_versoalto/"
-             target="_blank" rel="noopener noreferrer">Instagram</a>
+             target="_blank"
+             rel="noopener noreferrer">Instagram</a>
         </div>
 
       </div>
 
       <div class="footer-bottom">
-        <p>© Verso Alto. Explore further. Go higher.</p>
-        <p>Made for the journey.</p>
+        <p>© 2026 Verso Alto. All rights reserved.</p>
+        <p>Explore further. Go higher.</p>
       </div>
-
     </div>
   </footer>
 
