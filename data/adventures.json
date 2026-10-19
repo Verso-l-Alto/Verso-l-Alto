@@ -16,5 +16,24 @@
     ],
     "description": "Visit the highest peak east of the Mississippi River and experience the surrounding Blue Ridge Mountains.",
     "sourceUrl": "https://www.ncparks.gov/state-parks/mount-mitchell-state-park"
+  },
+  {
+    "id": "kuwohi-clingmans-dome",
+    "name": "Kuwohi (Clingmans Dome)",
+    "state": "Tennessee / North Carolina",
+    "location": "Great Smoky Mountains National Park",
+    "type": "Mountain Summit",
+    "difficulty": "Moderate",
+    "distanceMiles": 1,
+    "elevationGainFeet": null,
+    "estimatedHours": null,
+    "scenery": [
+      "Mountain Views",
+      "Smoky Mountains",
+      "Panoramic Views",
+      "Observation Tower"
+    ],
+    "description": "Walk a steep, paved trail to an observation tower at the highest point in Great Smoky Mountains National Park, with panoramic mountain views when weather permits.",
+    "sourceUrl": "https://www.nps.gov/thingstodo/kuwohi.htm"
   }
 ]
